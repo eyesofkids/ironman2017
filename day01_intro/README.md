@@ -79,17 +79,17 @@
 
 ### 影片
 
-為方便解說操作的步驟，文章與圖片的敘述可能沒辦法很容易的解說步驟的進行，所以有些文章會特別錄製影片。所有的影片都會集中在Youtube的這個位址:
+為方便解說操作的步驟，文章與圖片的敘述可能沒辦法很容易的解說步驟的進行，所以有些文章會特別錄製影片。所有的影片都會集中在Youtube頻道的這個網址:
 
 - [ReactJS 新聞](https://www.youtube.com/channel/UCKPwo1yvJsNx0dTqIoVyEgQ)
 
-錄製的影片以10分鐘以內為限，字幕如果有時間會加上。
+錄製的影片會以10分鐘以內為限，搭配解說的聲音，字幕如果有時間會加上。
 
 ## Github庫
 
-本次鐵人賽我新增了一個Github庫，內容包含所有的文章文字內容、圖片與程式碼範例。網址如下:
+我為本次鐵人賽新增了一個Github庫，內容包含所有的文章文字內容、圖片與程式碼範例，如果你看不到圖或文字、程式碼等等，可以到這裡去看。網址如下:
 
-- [ironman2017](https://github.com/eyesofkids/ironman2017): https://github.com/eyesofkids/ironman2017
+- ironman2017: [https://github.com/eyesofkids/ironman2017](https://github.com/eyesofkids/ironman2017)
 
 ## 問答與回饋
 
@@ -97,6 +97,6 @@
 
 - IT邦幫忙這裡來作問答
 - 到Github中發Issue
-- 寫email給我也可以(到eddychang.me)
+- 寫email給我也可以(到我個人[部落格](eddychang.me)上有email)
 
 本文章也會在之後張貼到到我個人的[部落格](eddychang.me)與[segmentfault](https://segmentfault.com/u/eyesofkids)文章區中。
