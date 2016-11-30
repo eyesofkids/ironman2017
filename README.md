@@ -2,6 +2,10 @@
 
 IT邦幫忙 2017鐵人賽
 
+主題: React - DOM界的彼方
+
+![30天的主題大綱](https://github.com/eyesofkids/ironman2017/blob/master/day01_intro/asset/toc.png?raw=true)
+
 ## 30天主題
 
 ### 工具篇

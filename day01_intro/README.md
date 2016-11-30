@@ -1,6 +1,6 @@
 ## 第一天: 介紹文
 
-![30天的主題大綱](http://i.imgur.com/7zR2iGu.png?raw=true)
+![30天的主題大綱](https://github.com/eyesofkids/ironman2017/blob/master/day01_intro/asset/toc.png?raw=true)
 
 大家好！我是Eddy。今天是鐵人賽的第一天，我個人是第一次參加，也沒在討論區中回答過什麼問題，可能按照前輩們所說的資格建議，是完全不符合。IT邦幫忙是一個很好的園地，但對於像我們這種網站程式開發領域的開發者來說，上面的JavaScript或相關技術的問答很少，就算是大神也無用武之地。尤其在現今像社群網站Facebook(FB)相當流行的年代，許多問答都集中到FB中的相關社團裡面，現在的技術性討論區網站已經不是很流行，更不用說像PTT裡面的相關技術討論版，每個月的問答主題少之又少，這是一個實際的趨勢。
 
@@ -69,15 +69,13 @@
 
 主要解說程式碼或文章內容的重點。下面是個展示:
 
-![重點圖片](http://i.imgur.com/7xPV6dO.png?raw=true)
+![重點圖片](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day01_intro/asset/img_demo.png)
 
 #### 展示簡單實作成果
 
 這會使用gif圖片，展示實作成果的樣子。下面是個展示:
 
-![gif圖片](http://i.imgur.com/V9uerdH.gifv?raw=true)
-
-[Imgur](http://i.imgur.com/V9uerdH.gifv)
+![gif圖片](https://github.com/eyesofkids/ironman2017/blob/master/day01_intro/asset/state.gif?raw=true)
 
 ### 影片
 
