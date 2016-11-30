@@ -10,23 +10,23 @@
 
 > "用30天向世界宣告，這一年鋼鐵般的IT歷練"
 
-在這一年之中，我仔細地再重頭開始學習ES6，這對於所有的已經熟悉JavaScript的開發者而言，都是一個全新的學習階段。在這一年之中的學習過程，我很清楚的明白一件事，React與Redux本身設計都不困難，難的是你沒有紮實的ES6與JavaScript基礎，對於新式的語法當然會看不懂或不容易理解。
+在這一年之中，我仔細地再重頭開始學習ES6，這對於所有的已經熟悉JavaScript的開發者而言，都是一個全新的學習階段。而從這一年的學習過程中，我清楚的明白一件事，就是React與Redux本身的設計都不難理解，困難的是來自沒有紮實的ES6與JavaScript基礎，對於新式的語法當然會看不懂。
 
-那麼我要如何說明我寫的教學文章，能夠真的符合或讓讀者認為這些是對他(她)有益的？或者我寫的東西是讓讀者願意花時間來看的？
+那麼我要如何說明我寫的教學文章，能夠真的讓讀者認為這些是對他(她)有幫助的？或者我寫出來的教學內容是讓讀者願意花時間來看的？
 
-所以我需要寫出一些自己已經作過的歷程，這些都是在今年中開始的:
+當然我已經學過也用過許多年的JavaScript程式，除此之外，我會要寫出一些已經作過的歷程，提供各位讀者作為參考，這些都是在2016年中才開始的:
 
-第一在Gitbook上寫了兩本電子書，它們都是免費的，但還在增加與修改內容當中:
+第一在Gitbook上寫了兩本免費電子書，但有一些小章節還在增加與修改內容當中:
 
 - [從ES6開始的JavaScript學習生活](https://www.gitbook.com/book/eyesofkids/javascript-start-from-es6/details)
 - [從Promise開始的JavaScript異步生活](https://www.gitbook.com/book/eyesofkids/javascript-start-es6-promise/details)
 
-第二當然是成立一個FB粉絲專頁與電子報，這是針對ReactJS的部份，當然這目前只有經營半年左右，參與的人並不多的:
+第二當然是成立FB粉絲專頁與電子報，這是針對ReactJS的部份，目前只有經營半年左右，參與的人還不算多的:
 
 - [ReactJS新聞 FB粉絲專頁](https://www.facebook.com/reactjs.tw/)
 - [ReactJS電子報](https://reactjs-tw.top/)
 
-參加這次的鐵人賽，除了重新檢視這一年以來學習的成果之外，也希望能吸引更多人，學習這些新的知識，然後一同參與交流。
+最後，我會想參加這次的鐵人賽，除了重新檢視這一年以來學習的成果之外，也希望能吸引更多人來學習這些新的知識，然後一同參與交流。
 
 ## 文章內容說明
 
@@ -39,7 +39,11 @@
 - React篇(10-12篇): 搭配簡單的幾個實作範例，學習React的使用方式。
 - Redux篇(6篇): 從簡單的實作範例開始，到結合React使用。
 
-由於時間上只有30天等於只有30篇文章，扣掉第一天的介紹文章，只剩29篇。有些文章主題可能會作刪減或修改。
+由於時間上只有30天等於只有30篇文章，扣掉第一天的介紹文章，只剩29篇。所以最後有些文章主題可能會作刪減或修改。
+
+在Github庫中已經列出來的每篇主題大綱:
+
+- [30天的主題大綱](https://github.com/eyesofkids/ironman2017/blob/master/README.md)
 
 ### 寫作格式
 
@@ -57,7 +61,7 @@
 
 > 註: "不使用分號作為每行程式碼的結尾"是一種JavaScript程式撰寫的格式風格，詳細的內容可以參考這篇文章[JavaScript裡的語句用分號結尾是個選項嗎](http://eddychang.me/blog/javascript/97-js-semicolon.html)
 
-## 新加入的寫作方式
+## 其他的呈現方式
 
 以下是為了本次鐵人賽所加入的幾個輔助的教學呈現方式:
 
@@ -95,8 +99,8 @@
 
 如果你對文章裡面的內容有問題，或是要給一些建議，可以利用以下的方式:
 
-- IT邦幫忙這裡來作問答
-- 到Github中發Issue
-- 寫email給我也可以(到我個人[部落格](eddychang.me)上有email)
+- [IT邦幫忙](http://ithelp.ithome.com.tw/)
+- 到[Github庫](https://github.com/eyesofkids/ironman2017)發Issue
+- 寫email給我([部落格](eddychang.me)上有email)
 
 本文章也會在之後張貼到到我個人的[部落格](eddychang.me)與[segmentfault](https://segmentfault.com/u/eyesofkids)文章區中。
