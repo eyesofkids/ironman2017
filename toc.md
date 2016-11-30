@@ -1,7 +1,8 @@
 ## 工具篇
 
 1. Visual Studio Code/ Node.js/ webpack-es6-startkit
-2. Flow/ ESlint
+2. ESlint
+3. Flow
 
 ## ES6篇
 
