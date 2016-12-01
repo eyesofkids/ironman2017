@@ -1,5 +1,7 @@
 # 鐵人賽第 2 天: 開發環境與開發工具
 
+![開發環境與工具](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day02_dev_env/asset/all.png)
+
 ## 本章目標
 
 本章節的目標是打造出一個適合用於練習與開發ES6應用程式的環境，為了簡單學習起見，這裡的一些太細部的套件或功能說明，就請再到各套件的說明文件中，或是我附的一些參考文章中去觀看。
