@@ -49,7 +49,7 @@ VSC提供了對程式語言開發的眾多輔助功能，並不限於JavaScript�
 
 ![說明VSC的各功能區域](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day02_dev_env/asset/vsc_ov.png)
 
-> 註: 圖上面的字如果看不清楚，可以連到[原圖](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day02_dev_env/asset/vsc_overview.png)來看。
+> 註: 圖上面的字如果看不清楚，可以連到[原圖](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day02_dev_env/asset/vsc_ov.png)來看。
 
 大致上可分區5個區域，簡單說明如下:
 
