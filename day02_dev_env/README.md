@@ -68,7 +68,7 @@ VSC提供了對程式語言開發的眾多輔助功能，並不限於JavaScript�
 
 套件安裝完成後，會出現"reload"的按鈕，點按它可以重啟VSC開發工具，這樣才會載入剛安裝的套件。
 
-> 註: 如果你想要更深入理解VSC的其他好用套件，可以參考這篇文章: [Visual Studio Code中最佳的: 功能, 外掛, 像Atom或Sublime的作法]( https://scotch.io/tutorials/best-of-visual-studio-code-features-plugins-acting-like-atom-and-sublime)
+> 註: 如果你想要更深入理解VSC的其他好用套件，可以參考這篇文章: [Visual Studio Code中最佳的: 功能, 外掛, 像Atom或Sublime的作法(英文)]( https://scotch.io/tutorials/best-of-visual-studio-code-features-plugins-acting-like-atom-and-sublime)
 
 ### 使用者設定
 
