@@ -12,7 +12,7 @@ Lint工具最早是使用於C語言的程式碼靜態分析工具，用來標記
 
 在更早之前有[JSLint](http://jslint.com/)與[JSHint](http://jshint.com/)兩個為JavaScript設計的檢查工具，其中JSLint是由Douglas Crockford大師所創造，在2002年就發佈的一個工具，算得上是很有歷史的工具，不過它十分具有創造者的想法與特色，可以自訂的選項很少。而JSHint是從JSLint分支出來的新專案(2011)，更傾向於由社群主導的專案，具有更多的彈性選項。
 
-[ESLint](http://eslint.org/)是在這個領域的新專案，根據[最近的一份統計](https://ashleynolan.co.uk/blog/frontend-tooling-survey-2016-results#js-linters)也是在JavaScript開發中目前使用最多的語法檢查工具，它在2013年由[Nicholas C. Zakas](https://www.nczonline.net/about/)創造，正如它的名字一樣，它是為ES新標準所設計。
+[ESLint](http://eslint.org/)是在這個領域的新專案，根據[最近的一份統計](https://ashleynolan.co.uk/blog/frontend-tooling-survey-2016-results#js-linters)也是在JavaScript開發中，目前使用最多的語法檢查工具，它在2013年由[Nicholas C. Zakas](https://www.nczonline.net/about/)創造，正如它的名字一樣，它是為ES新標準所設計。
 
 相較於JSLint與JSHint，ESLint雖然也是作為檢查工具，但它有其他的新的特色如下:
 
@@ -21,19 +21,19 @@ Lint工具最早是使用於C語言的程式碼靜態分析工具，用來標記
 - ES6與JSX支援: 高度支援ES6標準語法，以及React自創的JSX語法
 - 警告與錯誤訊息: 更清楚的警告或錯誤訊息
 
-## Airbnb的專案 - JavaScript風格指引
+## Airbnb - JavaScript風格指引
 
-要談到ESLint，就需要進一談到Airbnb這家公司，這是一家專門在網路上提供民宿(或個人)的住所出租的網站服務業者，有可能你有聽過或出國自由行時有去租上面的房間。那麼Airbnb與ESLint有什麼關係？
+要談到ESLint，就需要進一步談到Airbnb這家公司，這是一家專門在網路上提供民宿(或個人)的住所出租的網站服務業者，有可能你有聽過或出國自由行時有去租上面的房間。那麼Airbnb與ESLint有什麼關係？
 
-Airbnb在Github上最有名的專案，就是這個擁有4萬個星的[JavaScript Style Guide (JS風格指引)](https://github.com/airbnb/javascript)，它並不是一個有應用程式碼的應用程式專案，而是以開發社群為導向的方式，制定一份JavaScript應用程式在開發時的撰寫風格指引，這份指引是讓所有的JavaScript的開發者參考，為了讓開發者能寫出更簡潔、更少錯誤的程式碼。目前也有延伸這種指引方式到React、CSS-in-JavaScript、CSS / Sass與Ruby的內容。目前這份的指引是以ES6標準為主。
+Airbnb在Github上最有名的開放原始碼專案，就是這個擁有4萬個星的[JavaScript Style Guide (JS風格指引)](https://github.com/airbnb/javascript)，它並不是一個產出應用程式碼的專案，而是以開發社群為導向的方式，制定一份JavaScript應用在開發時的撰寫風格指引，這份指引是讓所有的JavaScript的開發者參考，為了讓開發者能寫出更簡潔、更少錯誤的程式碼。目前也有延伸這種指引方式到React、CSS-in-JavaScript、CSS / Sass與Ruby的內容。目前這份的指引是以ES6標準為主。
 
-這份JavaScript指引也有[中文翻譯的版本](https://github.com/jigsawye/javascript)，你也可以參考中文的版本。在你稍微看到過了這份指引後，可以發現每個規則的後面都有一個eslint的對應規則，例如:
+這份JavaScript指引也有[中文翻譯的版本](https://github.com/jigsawye/javascript)，你也可以參考中文的版本。如果在你稍微看到過了這份指引後，可以發現每個規則的後面都有一個eslint的對應規則，例如:
 
 > 15.1 請使用 === 和 !== ，別使用 == 及 != 。eslint: eqeqeq
 
-後面的`eslint: eqeqeq`對照的就是在ESLint中的`eqeqeq`這個檢查規則，這個規則是在你如果在程式碼中，用值相等比較符號(==)時，會出現警告訊息，要求你要用嚴格相等比較(===)會比較好。
+後面的`eslint: eqeqeq`對照的就是在ESLint中的`eqeqeq`這個檢查規則，這個規則是在你如果在程式碼中，用值相等比較符號(==)時，會出現警告訊息，內容是有關於要求你要用嚴格相等比較(===)會比較好。
 
-不過，這麼多的JavaScript風格指引，不太可能開發者有那個美國時間一一記得，所以Airbnb把所有的風格指引，統統寫成一個ESLint中的設定檔案，稱之為[eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)，如果你的開發環境或工具有使用ESLint，直接裝來套用就行了。所以，在上一章的"樣版文件"中，就有直接使用這個設定檔案。
+不過，這麼多的JavaScript風格指引，不會有開發者有那個美國時間一一記得，雖然說多也不多，但也都是很零碎的片段。所以Airbnb把所有的風格指引，統統寫成一個ESLint中的預先的規則設定檔案，稱之為[eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)，如果你的開發環境或工具有使用ESLint，直接裝來套用就行了。在"開發工具&環境"的"樣版文件"中，就有直接使用這個設定檔案。
 
 ## 如何使用檢查工具
 
@@ -46,7 +46,7 @@ $('.btn').click(function() {
   $.ajax({
         url: "check.php",
         data: {
-            old_password: $("#old_password").val()
+            old_password: $("#password").val()
         },
         type: "POST",
         dataType: "json",
@@ -70,14 +70,14 @@ $('.btn').click(function() {
 - 字串要用單引號(\'\')，不用雙引號(\"\"): 6.1 字串請使用單引號 ''。
 - 函式或區塊語句的空格或空行風格: 18.2、18.3、18.4、18.7、18.8、18.9、18.11等等，整個18節內容都有。
 
-上面的程式碼像下面這樣改寫後，剩下4個錯誤3個警告，錯誤是因為我沒有引入jquery模組，警告是因為用了三個`console.log`，這樣應該算幾乎符合風格樣式的檢查:
+上面的程式碼像下面這樣改寫後，雖然看起來和原來的差不多。但現在只剩下4個錯誤3個警告，剩下的錯誤是因為我沒有引入jquery模組，而警告是因為用了三個`console.log`必定會有警告，這樣應該算幾乎符合風格樣式的檢查:
 
 ```js
 $('.btn').click(() => {
   $.ajax({
     url: 'check.php',
     data: {
-      old_password: $('#old_password').val(),
+      old_password: $('#password').val(),
     },
     type: 'POST',
     dataType: 'json',
@@ -98,11 +98,13 @@ $('.btn').click(() => {
 
 ## 嚴重的錯誤檢查
 
-ESLint的檢查出在程式碼中可能的剖析嚴重的致命錯誤，這些錯誤是一執行就會產生錯誤而停止執行，基本上會出現致命錯誤時，其他的所有檢查訊息都會先不出現，因為這個錯誤如果不修正，會造成整個程式根本不能正常運作，例如:
+ESLint會檢查出在程式碼中可能的剖析嚴重的致命錯誤，這些錯誤是一執行就會產生錯誤而停止執行，基本上會出現致命錯誤時，其他的所有檢查訊息都會先不出現，因為這個錯誤如果不修正，會造成整個程式根本不能正常運作，例如:
 
 ```js
 { a: 1 }.toString() //message: 'Parsing error: Unexpected token'
 ```
+
+> 註: 這個錯誤的原因是因為前面的物件字面文字，JS會當作是區塊的語句。這是符號共用的常見情況之一。
 
 或是下面這個常見的例子(因為作為跳脫符號後面多了一個空格):
 
@@ -114,6 +116,8 @@ console.log(a)
 
 // message: 'Parsing error: Unterminated string constant'
 ```
+
+> 註: 這個錯誤的原因是是用反斜線(\\)作為多行字串的定義，利用跳脫換號符號來定義，實際上並不是多行字串而是宣告時多行使用時單行。但這個語法在反斜線後面多了一個空白時會造成錯誤。而且在編輯區上一般是看不到，除非你開啟一些特殊的設定值。
 
 或是像ES6中新語法的基本使用錯誤，這個錯誤也會造成程式停止執行。它也可以正確的指出:
 
@@ -156,3 +160,9 @@ console.log(a)
 - env: 設定是要在browser或node上使用。(實際上可以設定的環境有29種，大部份都是測試環境)
 
 我會建議初學者，先用現成的就好。除了上面的這幾個設定區域外，它的規則有超過一百個以上，而且不一定可設定值都是相同的，如果你要設定規則，不妨先從別人設定好的來修整或覆蓋，像我上面設定rules區域中這樣。
+
+## 結論
+
+ESLint畢竟只是個檢查工具，光靠工具只能提醒你在撰寫程式碼時的一些可能性的問題，至於程式碼的主要功能是不是能正常運作，或是如何來修正這些程式碼，還是有待於開發者自己的知識。
+
+JavaScript本質上並不是一個嚴謹的程式語言，撰寫風格相當自由而且有許多陷阱與不好的語法。藉由ESLint工具的輔助，的確可以有效的協助開發者，進一步寫出較少bug、較少濳在問題、閱讀性較高的程式碼，好東西不用嗎？建議你現在就開始使用吧。

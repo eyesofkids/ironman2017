@@ -98,12 +98,12 @@ VSC提供了對程式語言開發的眾多輔助功能，並不限於JavaScript�
 
 ### 基本快速鍵
 
-VSC除了少少的選單項目可以選擇外，其他的像我們所安裝的擴充套件，幾乎都是要用從命令盤(Command Palette)下指令，或是使用快捷鍵來執行。
+VSC除了少少的選單項目可以選擇外，其他的像我們所安裝的擴充套件，幾乎都是要用從命令盤(Command Palette)下指令，或是使用快捷鍵來執行。以下是兩個會用到的快捷鍵:
 
-- 命令盤(Command Palette): 叫出所有可用指令的一個輸入框視圖。它的快捷鍵是Ctrl+Shift+p，如果是macOS則是Command+Shift+p。
-- 終端機(命令列視窗): 直接在編輯器中使用命令列視窗，方便打指令。它的快捷鍵是Ctrl+\`(重音符號，ESC鍵下面那個鍵)，最好記一下。
+- 命令盤(Command Palette): 叫出所有可用指令的一個輸入框視圖。它的快捷鍵是ctrl+shift+p，如果是macOS則是command+shift+p。
+- 終端機(命令列視窗): 直接在編輯器中使用命令列視窗，方便打指令。它的快捷鍵是ctrl+\`(重音符號，ESC鍵下面那個鍵)，最好記一下。
 
-其他的快捷鍵可以參考VSC官網的[這份文件](https://code.visualstudio.com/docs/customization/keybindings)。你也可以自訂快捷鍵，或是用有一類[keymap擴充套件](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)，套用Sublime Text或Atom的快速鍵，總之先不要太強求，用久了自然就慢慢會用得上。
+其他的快捷鍵可以參考VSC官網的[這份快捷鍵文件](https://code.visualstudio.com/docs/customization/keybindings)。你也可以自訂快捷鍵，或是用有一類[keymap擴充套件](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)，套用Sublime Text或Atom的快速鍵，總之先不要太強求，用久了自然就慢慢會用得上。
 
 ## 開發環境
 
@@ -152,9 +152,9 @@ npm i
 npm start
 ```
 
-伺服器會啟動在本機端的3000埠號中，所以使用瀏覽器輸入網址"http://localhost:3000"，就可以看到目前執行的結果。
+伺服器會啟動在本機端的3000埠號中，所以使用瀏覽器輸入網址`http://localhost:3000`，就可以看到目前執行的結果。
 
-按下"Ctrl+C"鍵就可以終止伺服器。
+按下"ctrl+c"鍵就可以終止伺服器。
 
 因為上面的測試用伺服器是用於開發階段的，如果你最後要打包所有開發好的程式檔案，然後佈署到實際的伺服器上時，可以用下面的指令:
 
@@ -172,17 +172,18 @@ npm run build
 npm i -g flow-bin
 ```
 
-Flow工具的使用，在之後的章節會再作介紹。
+參數`-g`代表加入到全域之中。至於Flow工具的使用，在之後的章節會再作介紹。
 
 ### 套件的說明
 
-這個樣版文件中包含了一些套件，雖然我們在`package.json`中只有看到12個左右的套件，但用npm安裝後，你會發現在`node_modules`目錄下有400多個套件，這是因為這些套件可能各自使用了其他的套件來開發，在開發的執行期間也需要其他的套件才可以正常運作，所以稱npm工具是所謂的"套件相依性管理工具"，npm可以針對這些套件進行各種管理。
+這個樣版文件中包含了一些套件，雖然我們在`package.json`中只有看到12個左右的套件，但用npm安裝後，你會發現在`node_modules`目錄下有400多個套件，這是因為這些套件可能各自使用了其他的套件來開發，在開發的執行期間也需要其他的套件才可以正常運作，所以稱npm工具是所謂的"套件相依性管理工具"，因為npm可以針對這些套件進行各種相依性的管理。
 
 我們使用的這幾個套件，簡單地在這裡說明它們的用途，你也可以到[npm官網](https://www.npmjs.com/)上的目錄去查詢:
 
 - [babel](https://babeljs.io/)等模組: 主要用於編譯ES6或者更新的標準的程式碼，為ES5的程式碼，這樣可以達到目前瀏覽器版本與品牌的最大相容性。這是因為目前現行的瀏覽器對於ES6或更新的標準語法並沒有完全都支援，而且還有部份的電腦仍然使用舊版本的瀏覽器，這需要一段時間才會逐漸普及。
 - [eslint](http://eslint.org/): 程式碼檢查工具。可以讓開發者在撰寫程式碼時，就幫忙先檢查程式碼中可能的問題，或是撰寫的風格上的不良習慣。
 - [webpack](https://webpack.github.io/docs/)與webpack-dev-server: 是一個模組的打包程式(bundler)，裡面有特殊的載入器設計，可以提供開發時的熱模組替代(Hot Module Replacement, HMR)功能，以及最後產出打包整個執行程式檔案等等功能。webpack-dev-server是一個特殊設計用於開發的小型Node.js Express伺服器。
+- [flow](https://flowtype.org/): 靜態類型檢查工具。用於撰寫程式碼時，加入靜態的類型標記，在開發階段可以提供檢查，最後在編譯時由babel相對的擴充去除這些標記。
 
 > 註: webpack是功能非常多而且很常見的打包工具，當然它的設定也會複雜，也有好幾種設定方式，如果你需要使用在進一步的開發上，應該要更深入了解它的設定與功用。
 
@@ -204,7 +205,7 @@ const add = (x, y) => x + y
 console.log(add(a, b))
 ```
 
-因為在樣版文件中已經加上熱模組替代(Hot Module Replacement, HMR)功能，在程式碼改變儲存後，就會自動進行編譯，以及自動在瀏覽器上進行重新載入。請動手試試看吧！
+因為在樣版文件中已經加上熱模組替代(Hot Module Replacement, HMR)功能，在程式碼改變儲存後，就會自動進行重新編譯，以及自動在瀏覽器上進行重新載入。請動手試試看吧！
 
 ## 影片
 
