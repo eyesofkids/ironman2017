@@ -202,9 +202,16 @@ ESLint中提供了`allowForLoopAfterthoughts`這個選項，可以讓你在for�
     "semi": ["error", "never"]
   },
   "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
-  }
+    "jsx": true,
+    "experimentalObjectRestSpread": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "import"
+  ]
 }
 ```
 
@@ -214,10 +221,7 @@ ESLint中提供了`allowForLoopAfterthoughts`這個選項，可以讓你在for�
 - extends: 這可以指定一些已經設定好的規則設定檔，像我這裡是用"airbnb-base"。不過專案裡也要有裝`eslint-config-airbnb-base`套件才能這樣設定。
 - rules: 額外的規則，我這裡只有另外定義可以語句結尾不用分號(;)這個規則。
 - ecmaFeatures: 這是一些特殊的語法支援，這兩個都是寫React需要的。
-
-這裡沒寫的，但其他常用到的區域如下:
-
-- plugins: 設定外掛。要有安裝才會設定。
+- plugins: 設定外掛。要有安裝才會設定，這裡使用了一個外掛 - [eslint-plugin-import ](https://www.npmjs.com/package/eslint-plugin-import)。
 - env: 設定是要在browser或node上使用。(實際上可以設定的環境有20多種，大部份都是測試環境)
 
 我會建議初學者先用現成的就好。除了上面的這幾個設定區域外，它的規則有超過一百個以上，而且不一定可用設定值都是相同的，如果你要設定規則，不妨先從別人設定好的來修整或覆蓋，像我上面設定rules區域中這樣，而且規則的部份要參考官方的文件說明。
