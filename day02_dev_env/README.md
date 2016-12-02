@@ -4,6 +4,8 @@
 
 本章節的目標是打造出一個適合用於練習與開發ES6應用程式的環境，為了簡單學習起見，這裡的一些太細部的套件或功能說明，就請再到各套件的說明文件中，或是到我附的一些參考文章中去觀看。
 
+> 註: 本文章附有影片，影片網址在[Youtube的這個網址](https://youtu.be/p27kTrpOGag)。原文同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day02_dev_env)。
+
 我個人並不建議初學者自行設定這些套件的設定，例如webpack就是個不容易設定的套件，因為功能很多而且方式有好幾種。當然如果你有很多時間可以學是不反對，不過你可以先用現成的樣版文件就可以，畢竟一開始的目的只是要學習一些ES6的新語法，順便體驗一下真實的開發環境是如何建立的。以下是這一章的步驟。
 
 1. 安裝Visual Studio Code開發工具，以及調整相關設定
@@ -211,7 +213,9 @@ console.log(add(a, b))
 
 這個影片中展示了所有這個章節中的設定與安裝的內容。
 
-[影片]
+[![Day02](http://img.youtube.com/vi/p27kTrpOGag/0.jpg)](https://www.youtube.com/watch?v=p27kTrpOGag)
+
+影片網址在[Youtube的這個網址](https://youtu.be/p27kTrpOGag)
 
 ## 常見問題
 
