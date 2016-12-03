@@ -4,7 +4,7 @@
 
 本章的目標是提供一些ESLint的簡介與使用建議，當然它只是個檢查工具，並不會自動幫你修正錯誤或警告。在撰寫程式碼的過程中，檢查工具的提示是很重要，它是可以提升開發者撰寫程式碼的品質的一種工具，所以這種檢查工具又稱為程式碼品質工具(Code Quality Tools)。而檢查工具背後的每一項語法檢查，都代表許多資深開發者的想法或經驗的累積，這些訊息對學習者來說都是相當寶貴的。
 
-> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day03_eslint)。
+> 註: 本文章附有影片，影片網址在[Youtube的這個網址](https://youtu.be/WWJeZXc5Zs8)。本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day03_eslint)。
 
 JavaScript語言長期以來有許多為人詬病的設計，雖然它一開始的初衷是希望能設計一個簡單易學的程式語言，但是因為自由度高又是弱資料類型，反而造成許多初學者無所適從。在很多時候對於同一種功能，這樣寫也可以那樣寫好像也可以，就算是對已經熟悉的開發者來說，也有可能會出現不經意的錯誤。
 
@@ -237,6 +237,14 @@ ESLint中提供了`allowForLoopAfterthoughts`這個選項，可以讓你在for�
 - env: 設定是要在browser或node上使用。(實際上可以設定的環境有20多種，大部份都是測試環境)
 
 我會建議初學者先用現成的就好。除了上面的這幾個設定區域外，它的規則有超過一百種，而且不一定可用設定值都是相同的，如果你要設定規則，不妨先從別人設定好的來修整或覆蓋，像我上面設定rules區域中這樣。
+
+## 影片
+
+這個影片中展示了所有這個章節中的設定與安裝的內容。
+
+[![Day03](http://img.youtube.com/vi/WWJeZXc5Zs8/0.jpg)](https://www.youtube.com/watch?v=WWJeZXc5Zs8)
+
+影片網址在[Youtube的這個網址](https://youtu.be/WWJeZXc5Zs8)
 
 ## 結論
 
