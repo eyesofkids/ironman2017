@@ -1,23 +1,29 @@
 # 鐵人賽第 3 天: ESlint
 
-本章的目標是提供一些ESLint的簡介與使用建議，當然它只是個檢查工具，而不會自動幫你修正錯誤或警告。在撰寫程式碼的過程中，檢查工具的提示是很重要，它是可以提升開發者撰寫程式碼的品質的一種工具，所以這種檢查工具又稱為程式碼品質工具(Code Quality Tools)。而檢查工具背後的每一項語法檢查，都代表許多資深開發者的想法或經驗的累積，這些訊息對學習者來說都是相當寶貴的。
+本章的目標是提供一些ESLint的簡介與使用建議，當然它只是個檢查工具，並不會自動幫你修正錯誤或警告。在撰寫程式碼的過程中，檢查工具的提示是很重要，它是可以提升開發者撰寫程式碼的品質的一種工具，所以這種檢查工具又稱為程式碼品質工具(Code Quality Tools)。而檢查工具背後的每一項語法檢查，都代表許多資深開發者的想法或經驗的累積，這些訊息對學習者來說都是相當寶貴的。
 
 JavaScript語言長期以來有許多為人詬病的設計，雖然它一開始的初衷是希望能設計一個簡單易學的程式語言，但是因為自由度高又是弱資料類型，反而造成許多初學者無所適從。在很多時候對於同一種功能，這樣寫也可以那樣寫好像也可以，就算是對已經熟悉的開發者來說，也有可能會出現不經意的錯誤。
 
 在經過20年來的眾多使用者的努力下，現在有了更多的輔助開發的新方式，有的是創造另一套新的程式語言或超集語言再編譯為JavaScript程式碼，例如TypeScript、CoffeeScript或Elm等等。而其它的輔助工具是另一種方式，例如Lint工具與明天要介紹的Flow工具就是。
 
-## ESLint
+## ESLint - Lint工具的後起之秀
 
-Lint工具最早是使用於UNIX系統中C語言的程式碼靜態分析工具，主要是用來標記語法結構上有可疑的、濳在的問題語法或指令。在之前就有[JSLint](http://jslint.com/)與[JSHint](http://jshint.com/)兩個為JavaScript設計的檢查工具，其中JSLint是由Douglas Crockford大師所創造，在10多年前(2002)就發佈的一個工具，算得上是很有歷史的工具，不過它十分具有創造者的想法與特色，而且可以彈性自訂的選項很少。而JSHint是從JSLint分支出來的新專案(2011)，更傾向於由社群主導的專案，具有更多的彈性選項，JSHint發展得很好，有許多大公司的開發都採用這個檢查工具，對於延伸的JSX語法，也有分支出來的[JSXHint](https://github.com/STRML/JSXHint)工具。其他各具特色的類似工具，還有像[JSCS](http://jscs.info/)工具與[StandardJS](http://standardjs.com/)等等。
+Lint工具最早是使用於UNIX系統中C語言的程式碼靜態分析工具，主要是用來標記語法結構上有可疑的、濳在的問題語法或指令。在之前就有[JSLint](http://jslint.com/)與[JSHint](http://jshint.com/)兩個為JavaScript設計的檢查工具，其中JSLint是由[Douglas Crockford](https://en.wikipedia.org/wiki/Douglas_Crockford)大師所創造，在10多年前(2002)就發佈的一個工具，算得上是很有歷史的工具，不過它十分具有創造者的想法與特色，而且可以彈性自訂的選項很少。而JSHint是從JSLint分支出來的新專案(2011)，更傾向於由社群主導的專案，具有更多的彈性選項，JSHint發展得很好，有許多大公司的開發都採用這個檢查工具，對於延伸的JSX語法，也有分支出來的[JSXHint](https://github.com/STRML/JSXHint)工具。其他各具特色的類似工具，還有像[JSCS](http://jscs.info/)工具與[StandardJS](http://standardjs.com/)等等。
 
 [ESLint](http://eslint.org/)是在這個領域的新專案，它在2013年由[Nicholas C. Zakas](https://www.nczonline.net/about/)創造，正如ESLint的名字一樣，它是為ES新標準語法所設計。根據[最近的一份統計](https://ashleynolan.co.uk/blog/frontend-tooling-survey-2016-results#js-linters)，它也是目前在JavaScript開發中，使用率最高的語法檢查工具。ESLint的功能具有高度設定彈性與擴充性，這是以往的檢查工具中所沒有的，雖然它的檢查速度比像JSHint慢了2x-3x，但它的其他特性是更受到開發者的喜好，速度可能並不是它的強項，畢竟它的檢查方式與可檢查項目很多。相較於JSLint與JSHint，ESLint還有其他的不同特色如下:
 
 - 高度的設定彈性: 有更多規則選項可以依需求或喜好設定
 - 具有擴充功能: 函式庫或框架的開發者可以依需求再開發擴充
-- 支援ES6與JSX: 高度支援ES6標準語法(甚至是更高版本標準的語法)，以及React自有的JSX語法
+- 支援ES6與JSX: 高度支援ES6標準語法(甚至是更高版本標準或實驗性質的語法)，以及React自有的JSX語法
 - 警告與錯誤訊息: 更清楚的警告或錯誤訊息
 
 > 註: 上述的JSCS團隊已合併到ESLint專案之中
+
+ESLint要依附在Node.js下執行，所以要使用它必須滿足幾個條件，不過這在我們之前的開發環境中都已經裝好了:
+
+- 安裝ESlint套件: 這是npm套件，可裝在專案中或全域中
+- 專案中要有ESlint的設定檔: 有各種格式，本文最下面有簡單的說明
+- 開發工具要使用對應的擴充(外掛): 幾乎每個開發工具中都有，可以作即時檢查
 
 ## Airbnb - JavaScript風格指引
 
@@ -31,7 +37,7 @@ Airbnb本身就有在Github上發佈一些自家公司使用的開放原始碼�
 
 後面的`eslint: eqeqeq`對照的就是在ESLint中的[eqeqeq](http://eslint.org/docs/rules/eqeqeq)這個檢查規則，這個規則是在你如果在程式碼中，用值相等比較符號(==)時，會出現警告訊息，內容是有關於要求你要用嚴格相等比較(===)會比較好。
 
-不過，這麼多的JavaScript風格指引，不會有開發者有那個美國時間一一記得，雖然說多也不多，但也都是很零碎的片段。所以Airbnb把所有的風格指引，統統寫成一個ESLint中的預先的規則設定檔案，稱之為[eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)，如果你的開發環境或工具有使用ESLint，直接裝來套用就行了。在"開發工具與環境"的"樣版文件"中，就有直接使用這個設定檔案。
+不過，這麼多的JavaScript風格指引，不會有開發者有那個美國時間一一記得，雖然說多也不多，但也都是很零碎的片段。所以Airbnb把所有的風格指引，統統寫成一個ESLint中的預先的規則設定檔案，稱為[eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)套件，如果你的開發環境或工具有使用ESLint，直接裝來套用就行了。在"開發工具與環境"的"樣版文件"中，就有直接使用這個設定檔案。
 
 ## 如何使用檢查工具
 
@@ -217,7 +223,7 @@ ESLint中提供了`allowForLoopAfterthoughts`這個選項，可以讓你在for�
 
 大概解說一下這裡面的幾個設定區域:
 
-- parser: 指的是剖析器，如果你有用babel編譯器，就是設定"babel-eslint"。
+- parser: 指的是剖析器，如果你有用babel編譯器，就是設定"babel-eslint"。使用babel的話，可以針對實驗性的語法(還未標準的語法)進行檢查，但有可能與現行瀏覽器的執行結果有一些小差異。
 - extends: 這可以指定一些已經設定好的規則設定檔，像我這裡是用"airbnb-base"。不過專案裡也要有裝`eslint-config-airbnb-base`套件才能這樣設定。
 - rules: 額外的規則，我這裡只有另外定義可以語句結尾不用分號(;)這個規則。因為規則會很多，通常規則是擺最下面一個設定。
 - ecmaFeatures: 這是一些特殊的語法支援，這兩個都是寫React需要的。
