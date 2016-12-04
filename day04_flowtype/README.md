@@ -347,7 +347,7 @@ foo(1)
 
 ```js
 function foo(x: mixed): string {
-  if (typeof x === 'number' && typeof x === 'string') {
+  if (typeof x === 'number' || typeof x === 'string') {
     return x + '10'
   }
   throw new Error('Invalid x type')
