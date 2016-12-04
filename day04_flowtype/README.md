@@ -1,6 +1,10 @@
 # Flow - JavaScript靜態類型檢查工具
 
+![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day04_flowtype/asset/intro.png)
+
 本章的目標是提供一些Flow工具的簡介與使用建議。當然Flow也只是個檢查工具，它並不會自動修正程式碼中的錯誤，也不會強制說你沒按照它的警告訊息修正，就不會讓你執行程式。當然，並沒有要求什麼時候一定要用這類的工具，只是這種作法可以讓你的程式碼更具強健性與閱讀性，也可以直接避去很多不必要的資料類型使用上的問題，這種開發方式目前在許多框架與函式庫專案，或是以JavaScript應用為主的公司中都已經都是必用工具。
+
+> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day04_flowtype)。
 
 本文大部份內容改寫自之前我寫的部落格文章 - [Flow靜態資料類型的檢查工具，10分鐘快速入門](http://eddychang.me/blog/javascript/90-flowtype-10-min.html)。在實例的部份有額外加入。
 
@@ -433,7 +437,16 @@ Flow在最近的[部落格](https://flowtype.org/blog/2016/10/13/Flow-Typed.html
 
 Flow另一個發展會是在開發工具的自動完成功能的改進，因為如果已經能在撰寫程式碼期間，就知道變數或常數的類型(靜態類型)，那麼在自動完成功能中就可以更準確地給出可用的屬性或方法。這一個功能在Facebook自家的Nuclide開發工具的[Flow說明頁](https://nuclide.io/docs/languages/flow/#autocomplete)中就有看到。Nuclide是基於Atom開發工具之上的工具，電腦硬體如果不夠力是跑不動的，而且它的確穩定性與執行速度都還需要再努力。
 
-### 結論
+## 影片
+
+這個影片中展示了所有這個章節中的設定與安裝的內容。
+
+
+
+影片網址在[Youtube的這個網址]()
+
+
+## 結論
 
 本文簡單的說明了Flow工具的功能介紹，以及其中的一些簡要的內容等等。相信看過後你已經對這個Flow工具有一些認識，以我個人學過TypeScript的經驗，相較於TypeScript的學習曲線，Flow大概是等於不用學。Flow雖然是一個很新的工具，但相當的有用，建議每個JavaScript開發者都可以試試，一開始不用學太多，大概這篇文章看完就可以開始用了。複雜的地方就再查看官方的文件即可。
 
