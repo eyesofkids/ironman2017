@@ -210,7 +210,7 @@ flow check
 在Visual Studio Code中因為它內建TypeScript與JavaScript的檢查功能，如果要使用Flow工具來作類型檢查，需要在使用者設定中，加上下面這行設定值以免衝突:
 
 ```
-javascript.validate.enable": false
+"javascript.validate.enable": false
 ```
 
 ## 轉換(編譯)有Flow標記的程式碼
