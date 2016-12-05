@@ -1,6 +1,10 @@
 # 鐵人賽第 5 天: ES6篇 - let與const
 
+![Day05](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day05_es6_let_const/asset/intro.png)
+
 很快地進入到鐵人賽的第5天，也進入到ES6篇的章節之中。本章的目標是針對let與const這兩個用於宣告變數與常數的語句，作重點式的介紹。有很多是整理我個人從討論區的回答文章。
+
+> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day05_es6_let_const)。
 
 ## 關於ES6
 
