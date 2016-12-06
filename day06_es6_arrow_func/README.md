@@ -284,6 +284,8 @@ func.call(obj) //Object {a: 1}
 
 以下的每個範例都只能用一般的函式定義方式，"**不可**"使用箭頭函式。
 
+> 註: 本節的內容大部份是參考自[When 'not' to use arrow functions](https://rainsoft.io/when-not-to-use-arrow-functions-in-javascript/)
+
 ### 用物件字面文字定義物件時，物件中的方法
 
 因為箭頭函式會以物件在定義時的捕捉到的週邊`this`為預設`this`，也就是window或全域物件(或是在嚴格模式的undefined)。所以會造成是存取不到物件中的`array`屬性值。
@@ -315,13 +317,12 @@ MyCat.prototype.sayCatName = () => {
 
 cat = new MyCat('Mew')
 
-//錯誤:  ReferenceError: cat is not defined
-cat.sayCatName()
+cat.sayCatName() // undefined
 ```
 
 ### DOM事件處理的監聽者(事件處理函式)
 
-箭頭函式的`this`值，相當於window或全域物件(或是在嚴格模式的undefined)。這裡的`this`值如果用一般函式定義的寫法，正確來說應該就是被監聽DOM元素本身。
+箭頭函式的`this`值，相當於window或全域物件(或是在嚴格模式的undefined)。這裡的`this`值如果用一般函式定義的寫法，正確應該是要對應到被監聽DOM元素本身。
 
 ```js
 const button = document.getElementById('myButton')
@@ -329,8 +330,6 @@ const button = document.getElementById('myButton')
 button.addEventListener('click', () => {
   this.innerHTML = 'Clicked button'
 })
-
-//錯誤 TypeError: Cannot set property 'innerHTML' of undefined
 ```
 
 ### 建構函式
@@ -341,7 +340,9 @@ button.addEventListener('click', () => {
 const Message = (text) => {
   this.text = text
 }
+
 // 錯誤 Throws "TypeError: Message is not a constructor"
+
 const helloMessage = new Message('Hello World!');
 ```
 
