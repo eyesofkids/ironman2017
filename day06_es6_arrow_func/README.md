@@ -1,5 +1,7 @@
 ## ES6篇 - 箭頭函式
 
+![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day06_es6_arrow_func/asset/intro.png)
+
 本章的目標是對箭頭函式提供一些較為全面性的介紹，除了基本的語法之外，也補充了很多React搭配使用時的實例，此外也提供撰寫的風格建議。當然，箭頭函式並不光只是語法簡短而已，它有一些與原來JavaScript中函式不同的設計，你可以把它當成是原本(傳統)的函式的改進版本。
 
 根據網路上統計的統計資料，箭頭函式(Arrow Functions)是ES6標準中，是最受歡迎的其中一種ES6新特性。它會受歡迎的原因是好處多多，只要注意在某些情況下不要用過頭就行了。有什麼好處呢？大致上有以下幾點:
