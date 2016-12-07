@@ -319,7 +319,7 @@ func({a: 10, b: 22})
 
 ## 撰寫風格建議
 
-- 避免在傳入參數預設值中產生副作用，修改到其他共享的變數。(Airbnb 7.8, Google 5.5.5.1)
+- 避免在傳入參數預設值中產生副作用，修改到其他共享的變數值。(Airbnb 7.8, Google 5.5.5.1)
 - 總是把有傳入參數預設值的參數放在函式的圓括號中的後面。(Airbnb 7.9)
 - 不要更動傳入參數的值，不要重新指定傳入參數的值。(Airbnb 7.12/7.13, eslint: [no-param-reassign](http://eslint.org/docs/rules/no-param-reassign.html))
 
