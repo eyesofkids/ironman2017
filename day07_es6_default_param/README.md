@@ -1,13 +1,17 @@
 ## ES6篇 - Default Parameters(預設傳入參數)
 
+![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day07_es6_default_param/asset/intro.png)
+
 本章的目標是提供ES6中在函式中的預設傳入參數的一些介紹。預設傳入參數是在眾多ES6新特性中的其中一個，它改善了長期以來在JavaScript中都要使用技巧性的作法來設定函式傳入參數的預設值的語法。
 
-函式的傳入參數是是函式與外部環境溝通的管道，也就是輸入資料的部份。
+> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day07_es6_default_param)。
 
-不過，你可能會在函式的"傳入參數"常會看到兩個不同的英文字詞，一個是parameter(或簡寫為param)，另一個是argument，這常常會造成混淆，它們的差異在於:
+函式的傳入參數是是函式與外部環境溝通的管道，也就是輸入資料的部份。不過，你可能會在函式的"傳入參數"常會看到兩個不同的英文字詞，一個是parameter(或簡寫為param)，另一個是argument，這常常會造成混淆，它們的差異在於:
 
 - parameters: 指的是在函式的那些傳入參數名稱的定義。我們在文章中會以"傳入參數定義名稱"來說明。
 - arguments: 指的是當函式被呼叫時，傳入到函式中真正的那些值。我們在文章中會以"實際傳入參數值"來說明。
+
+> 註: 函式中有個隱藏的物件也叫`arguments`這個名稱，所以它是捕捉到所有傳入到函式裡面的所有值的一個物件。
 
 ## 之前的預設傳入參數怎麼作
 
