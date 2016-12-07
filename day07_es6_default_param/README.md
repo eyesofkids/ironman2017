@@ -44,11 +44,11 @@ console.log('foo' || 'bar') // 'foo'
 console.log(false || 'bar') // 'bar'
 ```
 
-falsy的概念是另一個重要的JavaScript概念，Douglas Crockford大師級，他主張使用"**truthy**"與"**falsy**"來描述資料類型的值(在[JavaScript: The Good Parts](http://www.books.com.tw/products/0010410726)這本書中有這一段)。也就是說，像上面說講的那些會轉換為布林值的false值的資料類型的值，通稱為"falsy"(字典裡是沒這個字詞，意思是"false的")，你可以把它當成是"false家族成員"，或是"算作false的成員"。
+falsy的概念是另一個重要的JavaScript概念，Douglas Crockford大師主張使用"**truthy**"與"**falsy**"來描述資料類型的值(在[JavaScript: The Good Parts](http://www.books.com.tw/products/0010410726)這本書中有這一段)。也就是說，像上面說講的那些會轉換為布林值的false值的資料類型的值，通稱為"falsy"(字典裡是沒這個字詞，意思是"false的")，你可以把它當成是"false家族成員"，大概的定義如下:
 
 > "falsy"包含了0, -0, null, NaN, undefined, ''(空白字串)，當然也一定包含了false值
 
-相對於falsy，就是truthy，也就是不包含上面說的這些之外。falsy的概念在JavaScript中的撰寫風格中，可以說到處可見，尤其是與布林相關的邏輯運算語法，像下面這幾個例子:
+相對於falsy，就是truthy，也就是不包含上面說的這些之外的值。falsy的概念在JavaScript中的撰寫風格中，可以說到處可見，尤其是與布林相關的邏輯運算語法，像下面這幾個例子:
 
 ```js
 if (isValid) {
@@ -68,7 +68,7 @@ if (!collection.length) {
 
 用falsy與短路求值的概念來作預設值，老實說是一種技巧性的語法，但它並不精確，原因如下:
 
-- 空物件({})與空陣列([])都不是falsy成員之一，實際上對於物件類型的值完全無法判斷。
+- 空物件({})與空陣列([])都不是falsy成員之一，實際上對於物件類型的值完全無法判斷
 - 如果預設值可以是0或''(空白字串)，甚至可以是null，這種方式判斷不出來，要額外再作判斷
 
 以上大致上就是在ES6這個新特性之前，JavaScript中對於函式傳入參數預設值的一些作法。這些作法已經用了20年有了，一直到ES6後才有新的改進。
