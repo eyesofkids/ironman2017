@@ -1,4 +1,4 @@
-## ES6篇 - 預設傳入參數(Default parameters)
+## ES6篇 - Default Parameters(預設傳入參數)
 
 本章的目標是提供ES6中在函式中的預設傳入參數的一些介紹。預設傳入參數是在眾多ES6新特性中的其中一個，它改善了長期以來在JavaScript中都要使用技巧性的作法來設定函式傳入參數的預設值的語法。
 
@@ -71,7 +71,7 @@ if (!collection.length) {
 - 空物件({})與空陣列([])都不是falsy成員之一，實際上對於物件類型的值完全無法判斷
 - 如果預設值可以是0或''(空白字串)，甚至可以是null，這種方式判斷不出來，要額外再作判斷
 
-以上大致上就是在ES6這個新特性之前，JavaScript中對於函式傳入參數預設值的一些作法。這些作法已經用了20年有了，一直到ES6後才有新的改進。
+以上大致上就是在ES6這個新特性之前，JavaScript中對於函式傳入參數預設值的一些作法。這些作法已經用了10幾20年有了，一直到ES6後才有新的改進。
 
 ## ES6的傳入參數預設值
 
@@ -82,6 +82,8 @@ const link = function (point = 10, url = 'http://google.com') {
     //...
 }
 ```
+
+傳入參數的預設值順序與傳入參數的位置是一致的，這部份我想不用再多說明。也就是說像上面的函式，如果只有用`link(1)`，後面那個沒給的傳入參數就會看有沒有預設值可用，沒有就就為undefined。
 
 這樣的語法會比之前的預設值語法來得更佳簡單明確，除此之外，傳入參數預設值它與之前使用短路求值的作法有一個最大的不同之處:
 
@@ -123,11 +125,11 @@ foo(1)  // 12
 foo(1, 2) // 3
 ```
 
-> 特別注意: 避在在傳入參數預設值中造成副作用，例如像`function foo(a = 1, b = ++a) { console.log(a+b) }`，會造成`a`有副作用產生，你可能會得到不預期的結果。
+> 特別注意: 避免在傳入參數預設值中造成副作用，例如像`function foo(a = 1, b = ++a) { console.log(a+b) }`，會造成`a`被修改到，你可能會得到不預期的結果。
 
 ### 傳入參數預設值的求值是每個函式呼叫獨立的(Evaluated at call time)
 
-有些程式語言(例如Python)是定義期間決定傳入參數的預設值，下面的範例[來自這裡](http://dmitrysoshnikov.com/ecmascript/es6-notes-default-values-of-parameters/):
+有些程式語言(例如Python)是定義期間決定傳入參數的預設值，但ES6的設計是函式呼叫時才決定的，也就是在執行期間才進行設定，對每個函式呼叫都是獨立的。下面的範例[來自這裡](http://dmitrysoshnikov.com/ecmascript/es6-notes-default-values-of-parameters/):
 
 ```js
 function foo(x = []) {
@@ -140,7 +142,7 @@ foo() // [1]
 foo() // [1]
 ```
 
-這個設計可以免除掉在傳入參數預設值使用於複雜的物件類型值時，如果在函式中對傳入參數進行"具有副作用"求值運算的一些情況。當然，副作用是開發者要想辦法儘量避免的。
+這個設計可以免除掉在傳入參數預設值使用了複雜的物件類型值時，如果在函式中對傳入參數進行"具有副作用"求值運算的一些情況。當然，副作用是開發者要想辦法儘量避免的。
 
 ### 傳入參數預設值會隱蔽外在的作用域
 
@@ -172,7 +174,7 @@ foo(undefined, 1) // 錯誤 ReferenceError: y is not defined
 foo() // 錯誤 ReferenceError: y is not defined
 ```
 
-從這個例子可以知道TDZ(Temporal Dead Zone, 時間死區)的作用不只有在let與const的設計上有，實際上在ES6中都有類似的作用。而且傳入參數預設值它的作用域到底是全域作用域還是函式中的作用域，比較正確的說法是它是處於中介的作用域，夾在這兩者之間。
+從這個例子可以知道TDZ(Temporal Dead Zone, 時間死區)的作用不只有在let與const的設計上有，實際上在ES6中都有類似的作用。對於傳入參數預設值它的作用域到底是全域作用域還是函式中的作用域的議題，較正確的說法是它是處於中介的作用域，夾在這兩者之間，但仍然會互相影響。
 
 本節的內容可以參考這幾篇文章[TEMPORAL DEAD ZONE (TDZ) DEMYSTIFIED](http://jsrocks.org/2015/01/temporal-dead-zone-tdz-demystified/)、[ES6 Notes: Default values of parameters](http://dmitrysoshnikov.com/ecmascript/es6-notes-default-values-of-parameters/#tdz-temporal-dead-zone-for-parameters)與這個[Default parameters intermediate scope](https://github.com/google/traceur-compiler/issues/1376)討論文。
 
@@ -215,7 +217,7 @@ foo()
 console.log(x)
 ```
 
-這個例子中的最後，在函式中得到x值到底是1、2還是3？在最外圍的x會被改變嗎？
+這個例子中的最後結果，在函式foo中輸出的x值到底是1、2還是3？在最外圍的x會被改變嗎？
 
 函式中的x不可能是1，已經很明顯，因為函式區塊中有另一個x的宣告與指定值`let x = 3`。剩下的是傳入參數預設值中的那個函式，是不是會變數到函式區塊中的x值的問題。在全域中的那個x變數，會不會被改變？這也是一個問題。
 
@@ -323,4 +325,4 @@ func({a: 10, b: 22})
 
 ## 結論
 
-我原本認為的一小篇新特性介紹，最後竟然寫了這麼多的內容。這篇文章大概有8千多字，扣掉程式碼的部份大概也打了2多千字有。可見這個小小的ES6新特性，裡面有太多的細節，如果要研究得透徹，也是需要花不少時間的。這個改進我個人認為是一個很棒的新特性，相信在未來的JavaScript函式庫或框架中，都會使用到它。
+我原本認為的一小篇新特性介紹，最後竟然寫了這麼多的內容。這篇文章大概有8千多字，扣掉程式碼的部份大概也打了千字有。可見這個小小的ES6新特性，裡面有太多的細節，如果要研究得透徹，也是需要花不少時間的。這個改進我個人認為是一個很棒的新特性，相信在未來的JavaScript函式庫或框架中，都會使用到它。
