@@ -243,7 +243,7 @@ func({a: 1, b: 2}) // 3
 func({a: 1}) // 6
 func({b: 2}) // 5
 func({}) // 8
-func() // Cannot read property 'a' of undefined
+func() // TypeError: Cannot match against 'undefined' or 'null'
 ```
 
 上例中最後一個`func()`的呼叫明顯會產生錯誤，因為它相當於`let {a = 3, b = 5} = undefined`，也會產生錯誤。
@@ -261,6 +261,8 @@ func({b: 2}) // 5
 func({}) // 8
 func() // 8
 ```
+
+> 特別注意: 這個樣式很常見，在函式傳入參數預設值使用空物件算是一種保護性語法。
 
 另一種使用傳入參數預設值的情況，是在傳入參數預設值中給了另一套預設值，但它只會在`func()`時發揮預設值指定的作用：
 
