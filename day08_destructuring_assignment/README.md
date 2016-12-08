@@ -4,6 +4,8 @@
 
 本章的目標是對Destructuring Assignment(解構賦值)提供一些使用上的說明。這些語法在React、React Native、Redux等等新式的函式庫應用上非常的常見，是一個必學的語法。
 
+> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day08_destructuring_assignment)。
+
 ## 解構賦值介紹
 
 "解構賦值"這個中文翻譯會是簡體中文的翻譯字詞，繁體中文通常會翻為"指定值"而不是"賦值"，因為網路上的中文翻譯常見的都是用這個翻譯，所以這裡用這個中文名詞。中文的意思為"解析結構來進行指定"。解構賦值是屬於ES6標準中指定運算的章節。
