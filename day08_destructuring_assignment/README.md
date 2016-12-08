@@ -315,6 +315,8 @@ g() // 3
 
 學再多的知識也比不上從真實的案例中來看這個語法的用處。真實的情況是在React或React Native的程式碼中，處處可見解構賦值的語法，這幾列出幾個例子與簡單的解說。如果你能真正看得懂這些語法的功用，相信你的React能力一定會更加提升。
 
+因為怕混用各種特性語法會造成初學者一開始學習時的解讀困難，所以我先把搭配其餘運算符的部份留在之後的章節再說明。
+
 ### 從元件中解構出其他的物件值
 
 以下的程式碼來自React Native的[官方範例](https://github.com/facebook/react-native/blob/master/Examples/UIExplorer/js/NavigationExperimental/NavigationCardStack-example.js):
@@ -341,16 +343,16 @@ const {
 
 從本文上面的說明對照這裡來看，其實一點都不難，只是名稱長了點，而且都是識別名稱(物件名)。物件的解構賦值容易讓人搞混，是因為它有簡寫法，這裡的例子剛好用了這兩種，一種是正常的樣式對映，另一種是簡寫法。
 
-一般正常的用法像下面這樣，所以要被賦值的識別名(變數名)是在左邊樣式中的"屬性對應的值"代表。:
+一般正常的用法像下面這樣，所以要被賦值的識別名(變數名)是在左邊樣式中的以"屬性對應的值"來代表:
 
 ```js
 const obj = {a: 1, b: 2}
 const {a: x, b: y} = obj //x=1, y=2
 ```
 
-上述的第二個解構賦值語法，就是這種，所以它提取到的是`NavigationCardStack`與`NavigationStateUtils`這兩個識別名，對應到NavigationExperimental元件(模組)裡的物件值。
+上述的第二個解構賦值語法，就是這種正常型的用法，所以它提取到的是`NavigationCardStack`與`NavigationStateUtils`這兩個識別名，在這個程式檔案中就可以使用這兩個識別名，這兩個對應到的是NavigationExperimental元件(模組)裡的物件值。
 
-下面的是一種簡寫法，此時只能在左邊的物件樣式中，寫要對應的物件值中的屬性名稱，會變為有點類似於把物件中的屬性直接提取出來為另一個變數名:
+下面的例子是一種簡寫法，此時只能在左邊的物件樣式中，寫要對應的物件值中的屬性名稱，會變為有點類似於把物件中的屬性直接提取出來為另一個變數名:
 
 ```js
 const obj = {a: 1, b: 2}
@@ -360,9 +362,9 @@ const {a, b} = obj //a=1, b=2
 const {a: a, b: b} = obj
 ```
 
-上述的第一個解構賦值語法，這是一般提取React Native中元件模組的方式，都是用簡寫法的解構賦值，也就是簡寫法。React Native中的所有包含的元件模組定義程式檔，應該是在函式庫的[這個檔案](https://github.com/facebook/react-native/blob/3683beb88ab3233038ac32b9c33112d537478088/Libraries/react-native/react-native.js)。
+上述的第一個解構賦值語法，這是一般提取React Native中元件模組的方式，都是用簡寫法的解構賦值。React Native中的所有包含的元件模組定義程式檔，應該是在函式庫的[這個檔案](https://github.com/facebook/react-native/blob/3683beb88ab3233038ac32b9c33112d537478088/Libraries/react-native/react-native.js)之中。
 
-> 註: 上述的簡寫法可以這樣寫，是因為另一個ES6中的特性，稱為"Object Literal Property Value Shorthand"(物件字面屬性值簡寫)
+> 註: 上述的簡寫法可以這樣寫，是因為ES6中有另一個新特性，稱為"Object Literal Property Value Shorthand"(物件字面屬性值簡寫)
 
 ### 從props與state解構賦值
 
@@ -378,7 +380,7 @@ class DataModal extends Component {
 }
 ```
 
-這個例子就不多說明了，這是很一般的物件解構賦值語法而已。主要是你在等號(=)右邊的物件值裡的結構要是等號左邊樣式的這樣，才能正確賦到屬性值。
+這個例子就不多說明了，這是很一般的物件解構賦值語法而已。主要是你在等號(=)右邊的物件值裡的結構要是等號左邊樣式的這樣，才能正確指定到屬性值。
 
 ### 使用於函式的傳入參數之中的解構賦值
 
@@ -395,7 +397,7 @@ function DataProcess({ onClickButton, stepCurrent }) {
 }
 ```
 
-實際上它是一種解構賦值的語法，作為元件的函式通常是傳入props物值值進來。所以相當於以下的語法:
+實際上它是一種解構賦值的語法，作為元件的函式通常是傳入的是props值。所以相當於以下的語法:
 
 ```js
 function DataProcess(props) {
@@ -411,6 +413,8 @@ function DataProcess(props) {
   )
 }
 ```
+
+所以，如果你在函式的傳入參數中，使用了物件的樣式結構作為傳入參數的定義，當傳入一個物件值時，就會進行解構賦值。之後在函式區塊中，直接可以使用由這個樣式結構提取到的傳入物件中的屬性值。
 
 ## 撰寫風格建議
 
