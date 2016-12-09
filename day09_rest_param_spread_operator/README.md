@@ -1,6 +1,10 @@
 # ES6篇: Spread Operator & Rest Operator(展開與其餘運算符)
 
+![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day09_rest_param_spread_operator/asset/intro.png)
+
 本章的目標是對展開運算符(Spread Operator)與其餘運算符(Rest Operator)提供一些使用上的說明。這些語法在React、React Native、Redux等等新式的函式庫應用上非常常見，是一個必學的語法。要注意的是，有些語法超出了ES6標準的範圍，本文的最後面有提供一些說明。
+
+> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day09_rest_param_spread_operator)。
 
 展開運算符(Spread Operator)與其餘運算符(Rest Operator)是ES6中的其中兩種新特性，雖然這兩種特性的符號是一模一樣的，都是三個點(...)，但使用的情況與意義不同。我們常常在文字敘述或聊天時，這個(...)常用來代表了"無言"、"無窮的想像"或"還有其他更多的"的意思。
 
