@@ -20,6 +20,8 @@
 8. Object properties shorthand
 9. Array方法
 10. Object方法
+11. 番外篇: fetch
+12. 番外篇: pure function & side effect
 
 ## ReactJS篇 (10-12 days)
 
