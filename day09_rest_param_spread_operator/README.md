@@ -1,4 +1,4 @@
-# 展開運算符與其餘運算符
+# ES6篇: Spread Operator & Rest Operator(展開與其餘運算符)
 
 本章的目標是對展開運算符(Spread Operator)與其餘運算符(Rest Operator)提供一些使用上的說明。這些語法在React、React Native、Redux等等新式的函式庫應用上非常常見，是一個必學的語法。要注意的是，有些語法超出了ES6標準的範圍，本文的最後面有提供一些說明。
 
@@ -177,7 +177,7 @@ f(1, 2, 3, 4) // 6 (the fourth parameter is not destructured)
 
 > 特別注意: 在使用解構賦值時一樣只能用一個其餘運算符，位置也只能放在最後一個。
 
-## ES7+標準的其餘屬性(Rest Properties)與展開屬性(Spread Properties)
+## ES7+的其餘屬性(Rest Properties)與展開屬性(Spread Properties)
 
 上面都只有談到與陣列搭配使用，但你可能會看到在物件上也會使用類似語法與符號(...)，尤其是在React與Redux中。這些都是還在制定中的ES7之後的草案標準，稱為其餘屬性(Rest Properties)與展開屬性(Spread Properties)。例如下面這樣的範例，來自[這裡](https://github.com/sebmarkbage/ecmascript-rest-spread)：
 
@@ -197,7 +197,7 @@ console.log(n) // { x: 1, y: 2, a: 3, b: 4 }
 
 ## 撰寫風格建議
 
-- 不要使用函式中的arguments，總是使用其餘參數語法來取代它。(Airbnb 7.6, Google 5.5.5.2, eslint: prefer-rest-params).
+- 不要使用函式中的arguments物件，總是使用其餘參數語法來取代它。(Airbnb 7.6, Google 5.5.5.2, eslint: prefer-rest-params).
 - 不要在展開運算符與其餘運算符後面有空格，也就是與後面的識別名稱(傳入參數名稱、陣列名稱)之間要緊接著。(Google 5.2.5/5.5.5.2, eslint: rest-spread-spacing)
 - 用展開運算符的語法來作拷貝陣列。(Airbnb 4.3)
 - 用展開運算符的語法來取代函式中的`apply`的語法，作不定個數傳入參數的函式呼叫。(Airbnb 7.14, eslint: prefer-spread)
