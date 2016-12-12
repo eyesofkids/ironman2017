@@ -1,12 +1,12 @@
 # ES6篇: Side Effects(副作用)與Pure Functions(純粹函式)
 
-![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day11_module_system/asset/intro.png)
+![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day12_side_effect_pure_func/asset/intro.png)
 
-本章的目標是對Side Effect(副作用)與(Pure Functions)純粹函式提供一些說明。Pure Functions(純粹函式)的概念是來自於Side Effects(副作用)，這是一個電腦科學(程式語言)中經常看到的名詞，本章的內容提供一些指引，但這與ES6標準較無關係，這與開發者如何撰寫功能性比較有關。
+本章的目標是對Side Effect(副作用)與(Pure Functions)純粹函式的概念提供一些簡要的說明。Pure Functions(純粹函式)的概念是來自於Side Effects(副作用)，這是一個電腦科學(程式語言)中經常看到的名詞，本章的內容與ES6標準雖無關係，但也有運用一些ES6中的語法。本章的內容會與開發者如何撰寫功能性比較有關。
 
-React在一開始學習時，這個概念還不明顯，實際上React的內部設計是有純粹函式的概念。但只要一往學到Flux與Redux，純粹函式不是一個選項，是必定要使用的，這個部份大概是所有學過Redux的朋友，最難理解的其中一個主題。但如果你不先學習什麼是純粹函式，什麼是副作用，馬上就學Flux與Redux會非常的有無力感。
+React在一開始學習時，這個概念還不明顯，實際上React的內部設計是有純粹函式的概念。但只要一學到Flux與Redux，純粹函式並不是一個選項，是必定要使用的，這個部份大概是所有學過Redux的初學者，最難理解的其中一個主軸。但如果你不先學習什麼是純粹函式，什麼是副作用，馬上就學Flux與Redux的話，相信一定很難一下子進入狀況。
 
-> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day11_module_system)。
+> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day12_side_effect_pure_func)。
 
 ### 副作用是什麼？
 
