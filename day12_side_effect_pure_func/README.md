@@ -209,7 +209,7 @@ const pureReverse = aArray => [ ...aArray ].reverse()
 
 ### delete
 
-刪除(delete)其中一個成員，再組合所有子字串:
+刪除(delete)其中一個成員，再組合所有子成員:
 
 ```js
 function pureDelete (aArray, index) {
