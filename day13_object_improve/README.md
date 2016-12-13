@@ -161,7 +161,7 @@ const o2 = { b: 2, c: 2 }
 const o3 = { c: 3 }
 
 const obj = Object.assign({}, o1, o2, o3)
-console.log(obj); // { a: 1, b: 2, c: 3 }
+console.log(obj) // { a: 1, b: 2, c: 3 }
 ```
 
 如果你只需要把一個新的方法，加入到原來的物件中，在ES5中的用法是在原型上指定，像下面這樣的語法:
