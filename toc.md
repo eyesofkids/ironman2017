@@ -8,7 +8,7 @@
 2. ESlint
 3. Flow
 
-## ES6篇 (10 days)
+## ES6篇 (9 days)
 
 1. let /const
 2. Arrow Function
@@ -16,29 +16,27 @@
 4. rest params & spread operator
 5. De-structuring Assignment
 6. Class
-7. import/export
-8. Object properties shorthand
-9. Array方法
-10. Object方法
-11. 番外篇: fetch
-12. 番外篇: pure function & side effect
+7. module system
+8. pure function & side effect
+9. object enhancement
 
-## ReactJS篇 (10-12 days)
+> 上面章節已結束，共13篇
 
-1. create-react-app / HelloWorld / JSX
-2. textinput
-3. textinput+
-4. search/filter
-5. search+
+## ReactJS篇 (10 days !! only)
+
+1. create-react-app / HelloWorld
+2. JSX
+3. textinput(state)
+4. textinput+(child -> owner)
+5. search/filter
 6. sort
-7. sort+
-8. ajax/fetch 生命週期
-9. refs
-10. cloneElement
-11. Style
-12. Animate
-13. HOC
-14. react-router
+7. ajax/fetch 生命週期
+8. refs
+9. cloneElement
+10. Style
+11. Animate
+12. HOC
+13. react-router
 
 ## Redux篇 (6 days)
 
@@ -48,3 +46,7 @@
 4. ex4 - react w connect
 5. ex5 - react refactor
 6. ex6 - thunk async(side effect)
+
+## 後記 (1 day)
+
+1. 參加心得&感想
