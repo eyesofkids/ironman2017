@@ -22,10 +22,10 @@ ES5中的語法如下:
 
 ```js
 function foo(a, b) {
-    return {result: "success", a: a, b: b}
+    return {result: 'success', a: a, b: b}
 }
 
-var a = "foo", b = 42, c = {}
+var a = 'foo', b = 42, c = {}
 var o = { a: a, b: b, c: c }
 ```
 
@@ -33,10 +33,10 @@ ES6的改寫的簡短語法如下，你應該有注意到少了用冒號(:)來�
 
 ```js
 function foo(a, b) {
-    return {result: "success", a, b}
+    return {result: 'success', a, b}
 }
 
-var a = "foo", b = 42, c = {}
+var a = 'foo', b = 42, c = {}
 var o = { a, b, c }
 ```
 
@@ -66,7 +66,7 @@ ES5中的語法如下:
 
 ```js
 var player = {
-    fullName: "Eddy",
+    fullName: 'Eddy',
     sayName: function() {
         console.log(this.fullName);
     }
@@ -77,7 +77,7 @@ ES6的改寫的簡短語法如下:
 
 ```js
 var player = {
-    fullName: "Eddy",
+    fullName: 'Eddy',
     sayName() {
         console.log(this.fullName);
     }
@@ -86,7 +86,7 @@ var player = {
 
 這樣的簡寫法大概是可以讓程式碼看起來更簡潔，在使用物件字面語法定義複雜的物件結構時，會看起來更佳清楚，閱讀性提高。
 
-> 註: 上面所說的的對屬性與方法的兩個簡寫法，在ESLint工具會協助檢查，規則是[object-shorthand](http://eslint.org/docs/rules/object-shorthand)
+> 註: 上面所說的對屬性與方法的兩個簡寫法，在ESLint工具會協助檢查，規則是[object-shorthand](http://eslint.org/docs/rules/object-shorthand)
 
 #### 預設傳入參數(Default Params)
 
@@ -94,7 +94,7 @@ var player = {
 
 ```js
 const player = {
-    fullName: "Eddy",
+    fullName: 'Eddy',
     sayName(word='Hi') {
         console.log(word + ' ' + this.fullName);
     }
@@ -109,11 +109,11 @@ player.sayName('Hello')
 這是在ES6中可以讓你動態的產出屬性的識別名稱，這會用在某一些特定的情況下。要計算的屬性名需要用方括號([])框住，直接看例子會比較明確:
 
 ```js
-const prop = "foo"
+const prop = 'foo'
 
 const o = {
-  [prop]: "hey",
-  ["b" + "ar"]: "there",
+  [prop]: 'hey',
+  ['b' + 'ar']: 'there',
 }
 
 console.log(o) //Object {foo: "hey", bar: "there"}
@@ -125,7 +125,7 @@ console.log(o) //Object {foo: "hey", bar: "there"}
 
 ```js
 // 這是錯誤的例子
-const prop = "foo"
+const prop = 'foo'
 
 const o = {
   [prop]
@@ -149,7 +149,7 @@ Object.assign(target, ...sources)
 拷貝一個物件在一般的物件中是很容易作得到的，當然這只是個淺拷貝，語法也很簡單:
 
 ```js
-const obj = { a:1}
+const obj = { a: 1 }
 const copy = Object.assign({}, obj)
 ```
 
@@ -172,7 +172,7 @@ MyClass.prototype.foo = function (arg1, arg2) {
     }
 ```
 
-使用Object.assign也可以作這件事，但它是類似於合併物件的語法，像下面這樣:
+使用`Object.assign`也可以作這件事，但它是類似於合併物件的語法，像下面這樣:
 
 ```js
 Object.assign(MyClass.prototype, {
@@ -182,7 +182,7 @@ Object.assign(MyClass.prototype, {
 })
 ```
 
-由於ES6使用的是`assign`這個名稱作為方法的名稱(也就是"指定值"的意思)，而不是`mixin`(混合)，它與在JavaScript中常見的mixin樣式，仍然有一些差異，它們對存取器屬性([accessor properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty))的行為不同。
+> 註: 由於ES6使用的是`assign`作為方法的名稱(也就是"指定值"的意思)，而不是`mixin`(混合)，它與在JS中常用的mixin樣式的行為仍然有一些差異，例如它們對存取器屬性([accessor properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty))的行為不同。
 
 > 註: 關於Object.assign的討論可以相當的深入而且複雜，如果你有興趣可以參考[這篇文章](http://www.2ality.com/2014/01/object-assign.html)中的說明。
 
