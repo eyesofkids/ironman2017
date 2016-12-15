@@ -1,4 +1,4 @@
-# Component(元件)與JSX
+# React篇: TextInput
 
 ## 學習目標
 
@@ -13,68 +13,62 @@
 
 我們在這個範例程式中，要使用三個程式碼檔案，一個是無狀態的顯示元件，名稱是TextShow，它的檔案名稱是TextShow.js，裡面的內容很簡單，只有下面這樣而已:
 
+> TextShow.js
+
 ```js
+// @flow
 import React from 'react'
 
-const TextShow = (props) => (
+const TextShow = (props: { text: string }) => (
     <h1>{props.text}</h1>
 )
 
-//加入props的資料類型驗証
+// 加入props的資料類型驗証
 TextShow.propTypes = {
   text: React.PropTypes.string.isRequired
 }
 
-//匯出TextShow模組
+// 匯出TextShow模組
 export default TextShow
 ```
 
-另一個檔案是我們主要的元件名稱是TextInput，而且它裡面會使用到TextShow元件，檔名一樣是用TextInput.js，裡面的內容如下:
+你可以看到這支程式最上面已經有加了`//@flow`的註記，這代表它會被Flow工具進行檢查，Flow工具有一些與React特別搭配的檢查工具，其中它會檢查`props`在這種函式元件語法中，在傳入值時是什麼樣的物件類型結構，因為我們的TextShow只有一個text屬性會由上層元件傳入，所以用`props: { text: string }`來指定傳入的props的型態。
+
+另一個檔案是我們主要的元件名稱是TextInput，而且它裡面會匯入使用到TextShow元件，檔名一樣是用`TextInput.js`，因為檔案滿長的，所以分幾個部份來看首先是最前面的部份:
+
+> TextInput.js
 
 ```js
+// @flow
 import React from 'react'
 import TextShow from './TextShow'
 
+type Props = {
+  initText: string,
+}
+
 class TextInput extends React.Component {
+    state: {
+      text: string,
+    }
 
-    //建構式
-    constructor() {
-        //super是呼叫上層父類別的建構式
-        super()
+    // 建構式
+    constructor(props: Props) {
+        // super是呼叫上層父類別的建構式
+        super(props)
 
-        //設定初始的狀態。注意！這裡有個反樣式。
+        // 設定初始的狀態。注意！這裡有個反樣式，不要用props的值來設定state的初始值
         this.state = {
-            text: ''
+            text: '',
         }
 
     }
 
-    //處理的方法，用event.target可以獲取到輸入框的值，用箭頭函式可以綁定`this`
-    handleChange = (event) => {
-        this.setState({text: event.target.value})
-    }
-
-    //渲染方法，回傳React Element(元素)
-    render() {
-        return <div>
-                  <input type="text"
-                    value={this.state.text}
-                    placeholder={this.props.initText}
-                    onChange={this.handleChange}
-                  />
-                  <TextShow text={this.state.text}/>
-                </div>
-    }
+    //後面還有程式碼...
 }
-
-//加入props的資料類型驗証
-TextInput.propTypes = {
-  initText: React.PropTypes.string.isRequired
-}
-
-//匯出TextInput模組
-export default TextInput
 ```
+
+這支程式的最上面也有加了`//@flow`的註記，它會對React中的一些特性作檢查，一個是props，另一個是state這兩個物件的結構。你可以注意到它們的設定方式不太一樣，
 
 第三個檔案是我們用來呈現元件在網頁上的程式碼檔案index.js，裡面會引用TextInput元件，程式碼如下:
 

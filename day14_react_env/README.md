@@ -137,6 +137,19 @@ npm install -g flow-bin
 ```
 [ignore]
 <PROJECT_ROOT>/node_modules/fbjs/.*
+
+[libs]
+./node_modules/fbjs/flow/lib
+
+[options]
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
+
+module.name_mapper='^\(.*\)\.css$' -> 'react-scripts/config/jest/CSSStub'
+module.name_mapper='^\(.*\)\.\(jpg\|png\|gif\|eot\|svg\|ttf\|woff\|woff2\|mp4\|webm\)$' -> 'react-scripts/config/jest/FileStub'
+
+suppress_type=$FlowIssue
+suppress_type=$FlowFixMe
 ```
 
 最後測試看看Flow工具有沒有正常在編輯工具中會檢查然後出現警告。如果等很久都沒反應，請在命令列工具(終端機)中輸入以下的指令:
@@ -146,6 +159,20 @@ flow check
 ```
 
 > 註: 在Windows下測試時，flow檢查有可能需要一點時間才會開始正常運作。請輸入上面的指令後看會不會出現檢查的結果。
+
+create-react-app其中也有包含flow的設定檔，官網的文件是說明，可以在packages.json中的scripts區域加入下面這一行:
+
+```
+"flow": "flow"
+```
+
+然後用命令列工具執行flow檢查的指令:
+
+```
+npm run flow
+```
+
+如果你的編輯器的Flow工具一直檢查不出來，或是一直有問題，可以試試官網提供的輸入檢查的設定方式與指令。
 
 ## eject專案(選項)
 
