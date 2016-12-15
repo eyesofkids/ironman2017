@@ -2,9 +2,9 @@
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day15_jsx/asset/intro.png)
 
-本章的目標是提供上一章的HelloWorld應用的詳盡說明，JSX語法的基礎與元件的三種語法。不過在這之前，我要先說明幾個學習的重點。
+"本文章附有影片"。本章的目標是提供上一章的HelloWorld應用的詳盡說明，JSX語法的基礎與元件的三種語法。不過在這之前，我要先說明幾個學習的重點。
 
-> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day15_jsx)。
+> 註: 本文章附有影片，影片網址在[Youtube的這個網址](https://youtu.be/fFmHSta1On0)。本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day15_jsx)。
 
 第一，不要一開始學習React就用官方的例子或是複雜的TodoMVC，例如像TodoMVC或新版官網現在上面的圈叉遊戲這些例子，這些例子不是給剛學習React的開發者看的，TodoMVC這種例子，比較像是現在每個函式庫或框架用來展示能力用的。之前我在一開始學習時，也是一開始就看TodoMVC，老實說是有看沒有懂，後來先把其他的基礎學會了，才能理解這個例子在寫什麼。所以我建議一開始先放慢速度，先把基礎紥實地學會才是比較好的方式。此外，有些人在學這種新的函式庫時，會覺得要像參加旅遊團一樣，用走馬看花的方式一天跑十個旅遊景點，把所有的新的、熱門的東西都花點時間學一遍，我不明白這樣作的目的是為了什麼，目的是趕風潮嗎？我也不認為這樣能真正學到什麼，在網路上已經有看到的，有些人說他已經學過學會的，但寫出來的程式碼可能自己在寫什麼都不知道，英文專有名詞錯字連篇，文章裡面中英文名詞混雜不通順難以理解。如果你學一項技術要學成這樣，那我覺得還是別浪費時間。
 
@@ -281,6 +281,10 @@ var HelloWorld = React.createClass({
 所以，不論你是使用類別、`React.createClass`方法或函式定義，它們都是React的元件，仍然是把props(屬性)當成輸入，最後把React Elements(元素)作為回傳，這也是元件最基本的結構。不過當然每種語法所能使用的特性有所不同，使用的語法也不相同。
 
 在本課堂中，我們只會使用第1種ES6+語法與第3種，工廠模式是算是舊的ES5語法，現在有很多新的範例或教學都開始改用新式的ES6+語法了。如果你會第1種語法，要看得懂ES5語法不會很困難。
+
+## 影片
+
+[![Day15](http://img.youtube.com/vi/fFmHSta1On0/0.jpg)](https://www.youtube.com/watch?v=fFmHSta1On0)
 
 ## 結論
 

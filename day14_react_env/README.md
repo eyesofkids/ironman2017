@@ -2,9 +2,9 @@
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day14_react_env/asset/intro.png)
 
-在之前的"開發環境&開發工具"，我們已經介紹過整個的環境的建置，從這裡開始，我們需要為因應React的開發而建立的另一個開發環境。但只有少部份的不同設定之處，其實整體來說步驟都是一樣的。
+"本文章附有影片"。在之前的"開發環境&開發工具"，我們已經介紹過整個的環境的建置，從這裡開始，我們需要為因應React的開發而建立的另一個開發環境。但只有少部份的不同設定之處，其實整體來說步驟都是一樣的。
 
-> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day14_react_env)。
+> 註: 本文章附有影片，影片網址在[Youtube的這個網址](https://youtu.be/jGciQPb2NZo)。本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day14_react_env)。
 
 ## 學習目標
 
@@ -235,6 +235,10 @@ export default HelloWorld
 試著改變"今天就開始學React!"這行字，看網頁上的結果會不會也跟著改變。
 
 如果你都能正確看到結果，那麼恭喜你進入React開發的大門！
+
+## 影片
+
+[![Day14](http://img.youtube.com/vi/jGciQPb2NZo/0.jpg)](https://www.youtube.com/watch?v=jGciQPb2NZo)
 
 ## 結論
 
