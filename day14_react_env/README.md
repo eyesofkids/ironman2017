@@ -188,11 +188,11 @@ index.js是我們React應用程式的根執行檔案。用滑鼠左鍵雙點擊�
 > index.js
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 把App.js這個檔案的內容清空，改輸入以下的程式碼:
