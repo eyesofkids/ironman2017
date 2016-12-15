@@ -1,4 +1,4 @@
-# React篇: HellowWorld解說與JSX
+# React篇: HelloWorld解說與JSX語法
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day15_jsx/asset/intro.png)
 
