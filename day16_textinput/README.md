@@ -1,18 +1,12 @@
-# React篇: TextInput
+# React篇: TextInput程式
 
-## 學習目標
-
-1. 第二支程式: TextInput元件(文字輸入框+顯示區)
-2. props(屬性)
-3. state(狀態)
-4. 事件處理
-5. JSX語法注意事項
-6. 範例程式的解說
-
-## 第二個範例程式: TextInput元件(文字輸入框+顯示區)
+![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day16_textinput/asset/intro.png)
 
 這個程式最後的呈現結果，會是在網頁上出現一個文字輸入框，當你輸入文字時，下面的顯示區域會一併跟著顯示，就像下面的動態圖片這樣:
-![TextInput元件展示](https://raw.githubusercontent.com/eyesofkids/react-entry-level-book/master/assets/textinput_demo.gif)
+
+![TextInput元件展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day16_textinput/asset/textinput_demo.gif)
+
+> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day16_textinput)，所有的程式碼也在裡面。
 
 我們在這個範例程式中，要使用四個程式碼檔案，其中二個與之前的幾乎是一樣的。
 
