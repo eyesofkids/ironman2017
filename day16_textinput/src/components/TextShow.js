@@ -1,5 +1,4 @@
 // @flow
-
 import React from 'react'
 
 const TextShow = (props: { text: string }) => (
