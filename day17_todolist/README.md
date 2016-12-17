@@ -6,7 +6,7 @@
 
 ![TextInput元件展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day17_todolist/asset/day17_demo.gif)
 
-> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day16_textinput)，所有的程式碼也在裡面。
+> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day17_todolist/)，所有的程式碼也在裡面。
 
 > 註: 這支程式只是很小型的一個TodoList應用，與一些教學或框架中的TodoMVC之類的功能完全不能比，不過我們會慢慢從這個應用中再延伸來學習。
 
