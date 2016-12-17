@@ -116,7 +116,7 @@ handleKeyPress = (e: KeyboardEvent) => {
 
 第一個是`handleChange`是處理輸入框在不斷輸入文字時用的，它與之前的TextInput元件是一樣的語法。
 
-第二個是輸入框被按下Enter鍵時要處理的方法，我們要判斷是按下Enter鍵而不是其它的鍵，可以用獲取到的[KeyboardEvent物件](https://facebook.github.io/react/docs/events.html#keyboard-events)的`key`屬性。然後要作兩個事，第一件事是把新的項目加到陣列中，也就是把新的項目(字串值)，加到陣列中的第一個成員，其它的成員往後排。用純粹函式的寫法，這個語法是很簡單的，原先在state中的陣列先用展開運算符(...)展開，然後與新項目組合為一個新的陣列，像下面這樣:
+第二個是輸入框被按下Enter鍵時要處理的方法，我們要判斷是按下Enter鍵而不是其它的鍵，可以用獲取到的[KeyboardEvent物件](https://facebook.github.io/react/docs/events.html#keyboard-events)的`key`屬性。然後要作兩個事，第一件事是把新的項目加到陣列中，也就是把新的項目(字串值)，加到陣列中的第一個成員，其它的成員往後排。本來這個是陣列中的[unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)方法，但JavaScript陣列中內建的unshift方法是個有副作用的方法，所以要改用純粹函式的寫法，這個語法是很簡單的，原先在state中的陣列先用展開運算符(...)展開，然後與新項目組合為一個新的陣列，像下面這樣:
 
 ```js
 const newItems = [e.target.value, ...this.state.items ]
