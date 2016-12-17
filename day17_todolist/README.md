@@ -223,8 +223,6 @@ this.state.items.map((value, index) => {
 
 重新渲染的機制之前有說過了，當你用了React後，不管是現在是要更動1個項目還是100個，如何更動網頁上的真實DOM元素都不關你的事，反正就是叫React去想辦法，它自然會用最有效率的方式來作網頁上的真實DOM元件的重新渲染與呈現。
 
-這個部份可能一開始學習時會有點不太習慣，畢竟概念很新要適應一下，用久了就大概知道React中能作的模式就是很固定的。不過，state(狀態)這個設計有一些問題，你可能已經看到了，因為state只能限制在某個元件之中使用，所以我們在一開始學習的簡單範例中，都會交由其中一個在上層的元件來控管整個應用的資料部份。這如果在小型應用中還可以這樣用，如果在有很多元件的應用中，用單一個state來控管所有的資料，會變得難以管理而且複雜。所以像Redux的函式庫，它們就是要來協助管理應用程式領域的資料，不過這是之後的另一篇主題了。
-
 > 註: 陣列的處理方法，請看之前的"ES6篇: Side Effects(副作用)與Pure Functions(純粹函式)"章節，或是[電子書的陣列](https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part3/array.html)這一章。常用的你可以先理解一下，看懂裡面的用法，之後有需要再查對照表就行了，其實就那幾種語法而已，實際上不會很困難。
 
 ---
@@ -278,3 +276,9 @@ Warning: Each child in an array or iterator should have a unique "key" prop. Che
 `key`值對React進行重新渲染非常重要，React會用`key`來決定子元素是同一個還是不同的，所以所有的子元素都一定要有`key`值，即便你只有一個子元素。因此，雖然在我們的這個例子裡，是直接使用陣列的索引值當`key`值，實際上這是一個反樣式(anti-pattern)。在真實的應用中，`key`值最好是使用能產生唯一值的其它方式。最簡單是用一個全域的變數值，來作為`key`值的累加，也會看到用獲取當下時間轉換為微秒值，或是使用像[shortid](https://www.npmjs.com/package/shortid)的函式庫。可以參考官網這篇[Lists and Keys](https://facebook.github.io/react/docs/lists-and-keys.html)文章，與這篇[Index as a key is an anti-pattern](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318#.lly6p2vm9)文章中的說明。
 
 > 特別注意: `key`值使用"陣列索引值"會是個反樣式，你應該採用別的隨機而且唯一值的產生方式。
+
+## 結論
+
+本章展示了一個簡單範例的它是由子元件中觸發事件，來更動子元件自己的props或刪除資料的樣式。可能一開始學習時會有點不太習慣，畢竟這概念很新要適應一下，用久了就大概知道React中能作的模式就是很固定的。
+
+不過，state(狀態)這個設計有一些問題，你可能已經看到了，因為state只能限制在某個元件之中使用，所以我們在一開始學習的簡單範例中，都會交由其中一個在上層的元件來控管整個應用的資料部份。這如果在小型應用中還可以這樣用，如果在有很多元件的應用中，用單一個state來控管所有的資料，會變得難以管理而且複雜。所以像Redux的函式庫，它們就是要來協助管理應用程式領域的資料，不過這是之後的另一篇主題了。
