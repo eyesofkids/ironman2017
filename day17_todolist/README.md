@@ -149,9 +149,9 @@ this.setState({
 
 > 註: 你也可以使用KeyboardEvent物件的keyCode屬性，對應Enter鍵是13(數字類型)。雖然[MDN上的文件](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/charCode)說它是非標準的屬性。
 
-> 註: 實際上setState這個方法它在執行時進行效率的最佳化，可以合併在一起的語法它會進行合併。這只是它的內部設計部份，我們的程式碼原本就應用寫得愈簡潔易懂愈好。
+> 註: 實際上setState這個方法它在執行時進行效率的最佳化，可以合併在一起的語法它會進行合併。這只是它的內部設計部份，稍微說明一下而已。
 
-第三個方法是`handleRemoveItem`，它並不是給這個元件中的DOM元素使用的，而是給包含在其中的子項目元件(TodoItem元件)使用的。這個方法會被當作是props屬性的其中一個，在標記中的`onItemClick`屬性指定給子項目元件(TodoItem元件)。
+第三個方法是`handleRemoveItem`，它並不是給這個元件中的DOM元素使用的，而是給包含在其中的子項目元件(TodoItem元件)使用的。這個方法會被當作是props屬性的其中一個，用標記中的`onItemClick`屬性指定給子項目元件(TodoItem元件)。程式碼如下:
 
 ```js
 //處理移除掉其中一個陣列中成員的方法
@@ -170,7 +170,7 @@ handleRemoveItem = (index: number) => {
 
 因為我們要刪除掉陣列中的其中一個成員，最簡單的方式就是用這個項目目前在陣列中的索引值，所以要寫成一個方法，傳入參數用索引值即可。
 
-這個刪除其中一個成員的純粹函式語法，實際上是使用陣列的`slice`方法，它是用來分割陣列為子陣列用的，語法看起來很簡潔，但其實很簡單，把原先的陣列`oldItems`，分割為從索引值0開始到這個要刪除的成員的索引值之前，用的是這語句`oldItems.slice(0,index)`。再從這個成員索引值，到陣列最後，分割出另一個子陣列，用的是這語句`oldItems.slice(index+1)`，然後再把這兩個陣列用`concat`方法串接起來，成為一個新陣列。
+這個刪除其中一個成員的純粹函式語法，實際上是使用陣列的[slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)方法，它是用來分割陣列為子陣列用的，語法看起來很簡潔有點一下子難以看懂，這裡稍微說明一下，把原先的陣列`oldItems`，分割為從索引值0開始到這個要刪除的成員的索引值之前，用的是這語句`oldItems.slice(0,index)`。再從這個成員索引值，到陣列最後，分割出另一個子陣列，用的是這語句`oldItems.slice(index+1)`，然後再把這兩個陣列用[concat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)方法連接起來，成為一個新陣列。
 
 最後，仍然要呼叫`setState`方法，讓整個DOM元素重新渲染更新，用下面的程式碼:
 
