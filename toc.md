@@ -22,30 +22,31 @@
 
 > 上面章節已結束，共13篇
 
-## ReactJS篇 (10 days !! only)
+## ReactJS篇 (11 days !! only)
 
 1. create-react-app / HelloWorld
-2. JSX
+2. HelloWorld explain
 3. textinput(state)
 4. textinput+(child -> owner)
-5. search/filter
-6. sort
-7. ajax/fetch 生命週期
-8. refs
-9. cloneElement
-10. Style
-11. Animate
-12. HOC
+5. textinput+Style
+6. textinput+edit field
+7. search/filter
+8. sort
+9. deeper JSX
+10. ajax/fetch / lifecycle
+11. refs
+12. props.children / cloneElement
 13. react-router
+
+---
 
 ## Redux篇 (6 days)
 
 1. ex1 - easy (textinput)
 2. ex2 - ex1+ (textinput+delete)
 3. ex3 - react w/o connect
-4. ex4 - react w connect
-5. ex5 - react refactor
-6. ex6 - thunk async(side effect)
+4. ex4 - react w connect + refactor
+5. ex6 - thunk async(side effect)
 
 ## 後記 (1 day)
 
