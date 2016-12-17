@@ -2,7 +2,7 @@
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day17_todolist/asset/intro.png)
 
-這個程式最後的呈現結果，會是在網頁上出現一個文字輸入框，當你輸入文字後按下Enter鍵，就會把文字加到下面的列表中。就像下面的動態圖片這樣:
+這個程式最後的呈現結果，會是在網頁上出現一個文字輸入框，當你輸入文字後按下Enter鍵，就會把文字加到下面的列表中，每個項目用滑鼠點按一下，會觸發這個項目的刪除事件。就像下面的動態圖片這樣:
 
 ![TextInput元件展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day17_todolist/asset/day17_demo.gif)
 
