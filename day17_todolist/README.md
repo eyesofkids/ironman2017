@@ -1,4 +1,4 @@
-# React篇: TodoList
+# React篇: TodoList程式
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day17_todolist/asset/intro.png)
 
