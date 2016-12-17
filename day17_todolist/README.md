@@ -8,6 +8,8 @@
 
 > 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day16_textinput)，所有的程式碼也在裡面。
 
+> 註: 這支程式只是很小型的一個TodoList應用，與一些教學或框架中的TodoMVC之類的功能完全不能比，不過我們會慢慢從這個應用中再延伸來學習。
+
 我們在這個範例程式中，要使用四個程式碼檔案，其中二個index.js與App.js與之前的幾乎是一樣的，就不再多說這兩個檔案。
 
 先看TodoItem這個元件，它比上次的TextShow元件多了二個props(屬性)，新增的屬性分別是props.index與props.onItemClick，這兩個的屬性的作用分別是:
