@@ -2,11 +2,11 @@
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day17_todolist/asset/intro.png)
 
-這個程式最後的呈現結果，會是在網頁上出現一個文字輸入框，當你輸入文字後按下Enter鍵，就會把文字加到下面的列表中，每個項目用滑鼠點按一下，會觸發這個項目的刪除事件。就像下面的動態圖片這樣:
+"本文章附有影片"。這個程式最後的呈現結果，會是在網頁上出現一個文字輸入框，當你輸入文字後按下Enter鍵，就會把文字加到下面的列表中，每個項目用滑鼠點按一下，會觸發這個項目的刪除事件。就像下面的動態圖片這樣:
 
 ![TextInput元件展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day17_todolist/asset/day17_demo.gif)
 
-> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day17_todolist/)，所有的程式碼也在裡面。
+> 註: 本文章附有影片，影片網址在[Youtube的這個網址](https://youtu.be/PtGcztIDVOE)。本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day17_todolist/)，所有的程式碼也在裡面。
 
 > 註: 這支程式只是很小型的一個TodoList應用，與一些教學或框架中的TodoMVC之類的功能完全不能比，不過我們會慢慢從這個應用中再延伸來學習。
 
@@ -280,6 +280,10 @@ Warning: Each child in an array or iterator should have a unique "key" prop. Che
 `key`值對React進行重新渲染非常重要，React會用`key`來決定子元素是同一個還是不同的，所以所有的子元素都一定要有`key`值，即便你只有一個子元素。因此，雖然在我們的這個例子裡，是直接使用陣列的索引值當`key`值，實際上這是一個反樣式(anti-pattern)。在真實的應用中，`key`值最好是使用能產生唯一值的其它方式。最簡單是用一個全域的變數值，來作為`key`值的累加，也會看到用獲取當下時間轉換為微秒值，或是使用像[shortid](https://www.npmjs.com/package/shortid)的函式庫。可以參考官網這篇[Lists and Keys](https://facebook.github.io/react/docs/lists-and-keys.html)文章，與這篇[Index as a key is an anti-pattern](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318#.lly6p2vm9)文章中的說明。
 
 > 特別注意: `key`值使用"陣列索引值"會是個反樣式，你應該採用別的隨機而且唯一值的產生方式。
+
+## 影片
+
+[![Day17](http://img.youtube.com/vi/PtGcztIDVOE/0.jpg)](https://www.youtube.com/watch?v=PtGcztIDVOE)
 
 ## 結論
 

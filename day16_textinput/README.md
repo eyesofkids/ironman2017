@@ -2,11 +2,11 @@
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day16_textinput/asset/intro.png)
 
-這個程式最後的呈現結果，會是在網頁上出現一個文字輸入框，當你輸入文字時，下面的顯示區域會一併跟著顯示，就像下面的動態圖片這樣:
+"本文章附有影片"。這個程式最後的呈現結果，會是在網頁上出現一個文字輸入框，當你輸入文字時，下面的顯示區域會一併跟著顯示，就像下面的動態圖片這樣:
 
 ![TextInput元件展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day16_textinput/asset/textinput_demo.gif)
 
-> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day16_textinput)，所有的程式碼也在裡面。
+> 註: 本文章附有影片，影片網址在[Youtube的這個網址](https://youtu.be/h2_40fj5AjI)。本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day16_textinput)，所有的程式碼也在裡面。
 
 我們在這個範例程式中，要使用四個程式碼檔案，其中二個與之前的幾乎是一樣的。
 
@@ -390,6 +390,10 @@ handleChange = (e) => {
 ```
 
 Flow工具自然有它的好處，它可以針對是不是文字輸入框作一些預先的檢查，在DOM元素上的事件基本上原本就需要經過判斷，才能知道它是由文字輸入框輸入的，還是一般的DOM元素像div的觸發事件。我覺得這是要逐漸習慣的部份。
+
+## 影片
+
+[![Day16](http://img.youtube.com/vi/h2_40fj5AjI/0.jpg)](https://www.youtube.com/watch?v=h2_40fj5AjI)
 
 ## 結論
 
