@@ -225,6 +225,8 @@ this.state.items.map((value, index) => {
 
 > 註: 陣列的處理方法，請看之前的"ES6篇: Side Effects(副作用)與Pure Functions(純粹函式)"章節，或是[電子書的陣列](https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part3/array.html)這一章。常用的你可以先理解一下，看懂裡面的用法，之後有需要再查對照表就行了，其實就那幾種語法而已，實際上不會很困難。
 
+> 註: 程式碼都是一直不斷改進語法，才會像你現在看到的這樣，哪有可能一寫就寫得這麼好。除非已經是很熟練的工程師，才有辦法一寫就寫出看起來漂亮簡潔又沒bugs的程式碼，對初學者來說，只求一開始先能達到所需的功能，再不斷的改進與調整裡面的語法就好。
+
 ---
 
 ## 其他的詳細說明
