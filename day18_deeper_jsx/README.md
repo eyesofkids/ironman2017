@@ -99,7 +99,7 @@ ReactDOM.render(React.createElement(
 
 ## JSX的花括號使用的情況
 
-JSX語法的花括號({})使用的情況將會有兩個地方，一個是在標記中的props(屬性)指定值時使用，另一個是在標記與標記之間，也就是有可能是在像`<div>...</div>`這樣的標記之中。大部份的情況的運算求值結果都是類似的，但仍然有一些小差異。官網的參考資料在這篇[JSX In Depth](https://facebook.github.io/react/docs/jsx-in-depth.html)。
+JSX語法的花括號({})使用的情況將會有兩個地方，一個是在標記中的props(屬性)指定值時使用，另一個是在標記與標記之間，也就是有可能是在像`<div>...</div>`這樣的標記之中。這兩種情況下，運算求值結果都是類似的，但仍然有一些小差異，以下是一些說明。官網的參考資料在這篇[JSX In Depth](https://facebook.github.io/react/docs/jsx-in-depth.html)。
 
 ### 在JSX中的props(Props in JSX)
 
