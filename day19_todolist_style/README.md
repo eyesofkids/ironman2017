@@ -1,5 +1,7 @@
 # React篇: TodoList程式 + 樣式(Style)
 
+![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day19_todolist_style/asset/intro.png)
+
 本章的目標是在React元件中的套用樣式(Style)，而且可以因狀態改變的作樣式變化，從上一章的程式碼作這些修改都是很簡單的，在React中使用CSS的樣式是個很重要而且有很多議論的主題，本章的重點在後面的說明部份，程式碼部份純粹是個簡單的範例而已。
 
 這個程式最後的呈現結果，會是在網頁上出現一個文字輸入框，當你輸入文字後按下Enter鍵，就會把文字加到下面的列表中，每個項目用滑鼠點按一下，會觸發這個項目的樣式變化。就像下面的動態圖片這樣:
