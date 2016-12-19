@@ -290,7 +290,7 @@ JavaScript提供的CSS介面畢竟對前端開發工程師來說，是一個很�
 
 這有很多選擇，現在有很多專案都是在開發專門給React使用的整套UI框架，例如:
 
-- [Material-UI](http://www.material-ui.com/#/)、
+- [Material-UI](http://www.material-ui.com/#/)
 - [React-Bootstrap](https://github.com/react-bootstrap/react-bootstrap)
 - [ant-design](https://github.com/ant-design/ant-design)
 - [react-toolbox](https://github.com/react-toolbox/react-toolbox/)
@@ -323,7 +323,7 @@ React社群中已經發展出許多專門使用內嵌樣式的輔助函式庫，
 
 這裡面最沒有爭議的是第3種，因為它與React元件中的程式碼的邏輯關係很密切，所以一般就直接用在React中的內嵌樣式來解決最直覺。
 
-第1種情況，你可以直接使用現成的許多版面的CSS解決方案，例如Bootstrap或有更簡單的，它們都可以運作得很好，只要你在元件外用個<div>框住，而且只用它們排版的部份，大部份都是可以正常運作。當然，如果你希望是使用有一致性的，多樣化的與動態的元件，你可以用以這些框架為基礎，專門為React打造的延伸框架。
+第1種情況，你可以直接使用現成的許多版面的CSS解決方案，例如Bootstrap或有更簡單的，它們都可以運作得很好，只要你在元件外用個`<div>`框住，而且只用它們排版的部份，大部份都是可以正常運作。當然，如果你希望是使用有一致性的，多樣化的與動態的元件，你可以用以這些框架為基礎，專門為React打造的延伸框架。
 
 第2種情況，這要視你的應用與團隊而決定，因為整個應用程式的元件外觀應該要有一致性，或許專門為它寫一個獨立的CSS是一種方式，或是全部採用內嵌樣式的作法。當然，在不使用現有框架中的特效元件的情況下，只套用外觀樣式的部份，也是可以的。例如Bootstrap就有提供[線上自訂服務](http://getbootstrap.com/customize/)，選擇你只要使用的某些功能。
 
