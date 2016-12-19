@@ -30,7 +30,7 @@ const aItem = {text: e.target.value, isCompleted: false }
 const newItems = [aItem, ...this.state.items ]
 ```
 
-原先的handleRemoveItem方法，現在要改成另一個方法，也就是當滑鼠點按每個項目時，它只會作樣式的變化，不會把這個項目從陣列中移除，下面這是新的`handleStylingItem`方法程式碼，當然在每個項目要指定的`onItemClick`屬性也要改當它:
+原先的`handleRemoveItem`方法，現在要改成另一個方法，也就是當滑鼠點按每個項目時，只會作樣式的變化，並不會把這個項目從陣列中移除，下面這是新的`handleStylingItem`方法程式碼，當然在每個項目要指定的`onItemClick`屬性也要改成它:
 
 ```js
 //處理樣式變化其中一個陣列中成員的方法
@@ -66,7 +66,7 @@ handleStylingItem = (index: number) => {
 }
 ```
 
-最後來看TodoItem中的改變，其實就多了一個`style`屬性，所以在Flow標記，以及propTypes都要加上這個屬性的檢查標記。style屬性是所有的真實的DOM元素中都有的一個屬性，JSX最後會把物件值轉變為真實套用的內嵌樣式，下面是TodoItem元件的整個程式碼:
+最後來看TodoItem中的改變，其實就多了一個`style`屬性，所以在Flow標記，以及propTypes都要加上這個屬性的檢查標記。`style`屬性是所有的HTML的DOM元素中都有的一個屬性，JSX最後會把物件值轉變為真實套用的內嵌樣式，下面是TodoItem元件的整個程式碼:
 
 ```js
 //@flow
@@ -98,9 +98,9 @@ export default TodoItem
 
 ## 其他的詳細說明
 
-### 內嵌樣式(inline style)與目前的網頁上的CSS使用方式
+### 內嵌樣式與目前的網頁上的CSS使用方式
 
-inline style(內嵌樣式)是一種很早期的對於DOM元素作樣式定義的撰寫風格，指的就是把CSS樣式的定義，直接插入到元素的`style`屬性中。它的範例大概會像下面這樣個範例:
+內嵌樣式(inline style)是一種很早期的對於DOM元素作樣式定義的撰寫風格，指的就是把CSS樣式的定義，直接插入到元素的`style`屬性中。長得大概會像下面這樣個範例:
 
 ```html
 <div style="width: 800px; margin: 1em auto; font: bold 1em/1.2 Verdana, Arial, Helvetica, sans-serif;">
@@ -110,7 +110,7 @@ inline style(內嵌樣式)是一種很早期的對於DOM元素作樣式定義的
 </div>
 ```
 
-inline style(內嵌樣式)是一個明顯有許多缺點的作法，一看就知道它不容易撰寫也不容易維護。現今對於網頁上DOM元素的CSS樣式定義方式，都是採用分離出CSS定義檔案的作法，獨立出所有的CSS定義，然後對DOM元素使用id或class屬性來指定風格。例如你可以獨立把CSS樣式放在一個獨立的css檔案中:
+內嵌樣式(inline style)是一個明顯有許多缺點的作法，一看就知道它不容易撰寫也不容易維護。現今對於網頁上DOM元素的CSS樣式定義方式，都是採用分離出CSS定義檔案的作法，獨立出所有的CSS定義，然後對DOM元素使用id或class屬性來指定風格。例如你可以獨立把CSS樣式放在一個獨立的css檔案中:
 
 ```html
 <link rel="stylesheet" href="css/base.css" type="text/css" media="screen">
@@ -165,9 +165,9 @@ inline style(內嵌樣式)是一個明顯有許多缺點的作法，一看就知
 
 ### 在JavaScript中的CSS
 
-JavaScript中原本就有完整的定義CSS樣式的許多介面(物件)、屬性與方法，只是之前很少被使用，能看到的有可能只被包在工具函式庫之中。在CSS分離的撰寫風格的時代，HTML、CSS、JavaScript三者分離，各自撰寫定義檔案，是個簡單而有效率的作法。因為要分離的很清楚，在JavaScript程式之中很少會直接定義CSS樣式，也就是使用內嵌的樣式。
+JavaScript中原本就有完整的定義CSS樣式的許多介面(物件)、屬性與方法，只是之前很少被使用，能看到的有可能只被包在工具函式庫之中。在現在HTML、CSS、JavaScript三者分離，各自撰寫定義檔案，是個簡單而有效率的作法。也因為要分離的很清楚，在JavaScript程式之中很少會直接定義CSS樣式，也就是使用內嵌的樣式。
 
-JavaScript中原本就有一個對應HTML元素實作HTMLElement介面(物件)，裡面就有一個`style`屬性，可以直接定義某個網頁上的元素的樣式，不過它使用了經過調整的[CSS屬性名稱](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference)，因為JavaScript把CSS的定義屬性名稱要當作物件的屬性識別名來使用，所以會原本的CSS中的定義名稱有些差異，不過9成以上都是改成小駝峰式的命名法而已，例如原本的`background-image`改為`backgroundImage`這樣，只有少數幾個例外，像`float`需要改為`cssFloat`。
+JavaScript中原本就有一個對應HTML元素實作HTMLElement介面(物件)，裡面就有一個`style`屬性，可以直接定義某個網頁上的元素的樣式，不過它使用了經過調整的[CSS屬性名稱](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference)，因為JavaScript把CSS的定義屬性名稱要當作物件的屬性識別名來使用，所以與原本的CSS中的定義名稱有些差異，不過9成以上都是改成小駝峰式的命名法而已，例如原本的`background-image`改為`backgroundImage`這樣，只有少數幾個例外，像`float`需要改為`cssFloat`。
 
 > 註: 在JavaScript中關於CSS與HTML的相關標準，是來自W3C組織所訂定，MDN把它們都歸在Web APIs裡，裡面的內容也非常的很多，有些新的功能是瀏覽器品牌與版本的支援程度都很散亂。
 
@@ -200,7 +200,7 @@ function changeBgToGreen(){
 
 > 註: 會用`className`作為CSS class(類別)的屬性名稱是因為與原本JS中的關鍵字`class`相衝突。另一個for屬性是用在label標記上的，因為也與JS中的關鍵字衝突，所以要改用[htmlfor](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/htmlFor)。
 
-不過因為`className`屬性的用法過於簡單，它可以指定單一個CSS類別識別名字串，或是以空格分隔的多個CSS類別識別名字串。後來又有一個新的屬性[classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)，它可以完全取代`className`屬性，可以套用多個CSS類別，裡面提供了下面幾個方法，可以更加彈性的套用、移除、切換CSS類別的使用:
+不過因為`className`屬性的用法過於簡單，它可以指定單一個CSS類別識別名字串，或是以空格分隔的多個CSS類別識別名字串，就這樣而已。後來又有一個新的屬性[classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)，它可以完全取代`className`屬性，除了也可以套用多個CSS類別，裡面提供了下面幾個方法，可以更加彈性的套用、移除、切換CSS類別的使用:
 
 - add: 加入CSS類別名稱，如果已經有了就忽略
 - remove: 移除CSS類別名稱
