@@ -102,7 +102,7 @@ export default TodoItem
 
 內嵌樣式(inline style)是一種很早期的對於DOM元素作樣式定義的撰寫風格，指的就是把CSS樣式的定義，直接插入到元素的`style`屬性中。長得大概會像下面這樣個範例:
 
-```html
+```
 <div style="width: 800px; margin: 1em auto; font: bold 1em/1.2 Verdana, Arial, Helvetica, sans-serif;">
     <div style="float: left; width: 400px; padding: 1em 2em; font-size: 0.9em;">
         some text...
@@ -112,13 +112,13 @@ export default TodoItem
 
 內嵌樣式(inline style)是一個明顯有許多缺點的作法，一看就知道它不容易撰寫也不容易維護。現今對於網頁上DOM元素的CSS樣式定義方式，都是採用分離出CSS定義檔案的作法，獨立出所有的CSS定義，然後對DOM元素使用id或class屬性來指定風格。例如你可以獨立把CSS樣式放在一個獨立的css檔案中:
 
-```html
+```
 <link rel="stylesheet" href="css/base.css" type="text/css" media="screen">
 ```
 
-或是在HTML檔案中加入<style>標記來定義:
+或是在HTML檔案中加入`<style>`標記來定義:
 
-```html
+```
 <style>
   #parent{
     width: 800px;
@@ -135,7 +135,7 @@ export default TodoItem
 
 然後把原本的HTML元素中的屬性改為id或class，像下面這樣:
 
-```html
+```
 <div id="parent">
     <div class="child">
         some text...
