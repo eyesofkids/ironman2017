@@ -1,7 +1,6 @@
-
 const styles = {
   itemCompleted: {
-    color: 'red', 
+    color: 'red',
     textDecoration: 'line-through'
   },
   itemNormal: {

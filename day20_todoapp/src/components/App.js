@@ -1,3 +1,4 @@
+//@flow
 import React, { Component } from 'react'
 import TodoList from './TodoList'
 import TodoItem from './TodoItem'
@@ -64,7 +65,7 @@ class App extends Component {
               />
             )
           )
-        } 
+        }
         </TodoList>
       </div>
     )
