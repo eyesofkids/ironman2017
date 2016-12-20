@@ -68,6 +68,8 @@ export type TodoAddFormProps = {
 const TodoAddForm = ({ placeholderText, onItemAdd }: TodoAddFormProps) => {}
 ```
 
+在`<input />`標記中的程式碼，是這次改造的重點核心，它的目的是要把原本使用在state中的暫時性資料，改用原本網頁上的DOM處理方式。要作這件事，你需要對refs屬性要有一定的理解，本章的下面有附詳細說明。這裡的程式碼用了refs屬性，它可以獲取到這個input元素，渲染到網頁上的實體，所以可以直接取到實體裡面的value屬性的值，利用這個值來作`onItemAdd`方法，id是一個新的item中的屬性，它是用來指key值用的，另外id值也改用在加入當下得到的時間微秒值，或許有更好的方式但目前就先這樣作吧。下面為程式碼:
+
 ```js
 <input
         type="text"
@@ -93,7 +95,87 @@ const TodoAddForm = ({ placeholderText, onItemAdd }: TodoAddFormProps) => {}
       />
 ```
 
+TodoItem元件沒有什麼太大的變化，它與TodoAddForm的寫法都是類似的，就儘量寫得愈簡單愈好。唯一比較大的不同，是它取消了index這個props(屬性)中的值，因為在它的上層元件指定給它(TodoItem)的props值時，直接使用一個箭頭函式在裡面加上索引值就可以正確定義出要作變化的方法。TodoItem元件如下面的程式碼:
 
+```js
+const TodoItem = ({ title, style, onItemClick }: TodoItemProps) => (
+   <li
+      onClick={() => {
+        onItemClick()
+      }}
+      style={style}
+      >
+      {title}
+    </li>
+)
+```
+
+TodoList元件中的之前的程式碼，都移往App.js中，它會變成一個單純的外層式元件，也是一個無狀態元件，程式碼如下:
+
+```js
+const TodoList = ({children}: TodoListProps) => (
+   <ul>{children}</ul>
+)
+```
+
+這邊唯一要注意的是`TodoListProps`的類型定義，定義檔`TodoTypeDefinition.js`中的類型定義如下，這是一個對React元素的特別定義語法，你可參考這裡的[討論說明](https://github.com/facebook/flow/issues/1355)。程式碼如下:
+
+```js
+export type TodoListProps = {
+  children?: React$Element<*>,
+}
+```
+
+App元件正式成為這個應用的最主要元件，它裡面的state是這支應用程式領域的狀態值，也變得更為單純，像下面這樣:
+
+```js
+state: {
+    items: Array<Item>,
+  }
+
+//...
+
+this.state = {
+    items: [],
+  }
+```
+
+Item的類型定義一樣在定義檔`TodoTypeDefinition.js`中，像下面這樣的物件結構:
+
+```js
+export type Item = {
+  id: number,
+  title: string,
+  isCompleted: boolean,
+}
+```
+
+其他的方法都是複製自之前的TodoList.js中，就不再多說。在render中的結構也變得更為清楚。在TodoItem中，key值改為用item物件的id值來指定，style的部份也用獨立的一個styles物件來指定，另外也少了index值，可以在onItemClick指定時，用箭頭函式來定義要刪除掉哪一個索引值即可:
+
+```js
+render() {
+    return (
+      <div>
+        <TodoAddForm placeholderText="開始輸入一些文字吧" onItemAdd={this.handleItemAdd} />
+        <TodoList>
+        {
+          this.state.items.map((item, index) => (
+              <TodoItem
+                key={item.id}
+                style={item.isCompleted? styles.itemCompleted: styles.itemNormal}
+                title={item.title}
+                onItemClick={()=>{ this.handleStylingItem(index) }}
+              />
+            )
+          )
+        }
+        </TodoList>
+      </div>
+  )
+}
+```
+
+所有的程式碼都放在Github中，從之前的TodoList程式到現在的TodoApp，改寫大概花了一個小時，但寫文章卻花了快一天的時間。很多細節與概念都附在下面的說明中，如果有看不懂的地方再發問，或是先看一下下面的說明，再回頭看程式碼也可以。
 
 ---
 
