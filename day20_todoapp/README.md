@@ -183,7 +183,7 @@ render() {
 
 ### 在JSX中的子元素(Children in JSX)
 
-在之前，我們一直沒看到在自己的元件上，使用另一種類型的語法，在JSX語法指引的文章中，有看到官方文件的另一種分類，稱之為`Children in JSX`，實際上它對應的就是像HTML中DOM元素的像下面這種寫法:
+在本章之前，我們一直沒看到在自己寫的的元件上，使用另一種種類的語法，不過在"JSX語法指引"的文章中，你應該有看到官方文件的另一種分類，稱之為`Children in JSX`，它對應的就是像HTML中DOM元素的像下面這種寫法，也就是用開頭的標記，加上結尾的標記，中間夾著其他元素或字串值:
 
 ```
 <div>Hello!</div>
@@ -194,7 +194,9 @@ render() {
 
 ```
 
-在React中，它設計了props(屬性)在React Element(元素)中是可以存在有 父母-子女(parent-children) 的關係，這個設計與真實網頁上的DOM元素的樹狀結構類似，所以當父母(parent)節點想要存取它的子女們(children)節點時，React中提供了`this.props.children`屬性可以使用，它是一個內建就有的屬性。但是，React會認為`this.props.children`屬性是一個含糊不清(opaque)的資料結構，為什麼呢？因為它有可能有幾種回傳情況:
+在React中，它設計了props(屬性)在React Element(元素)中是可以存在有 父母-子女(parent-children) 的關係，這個設計與真實網頁上的DOM元素的樹狀結構類似，所以當父母(parent)節點想要存取它的子女們(children)節點時，React中提供了`this.props.children`屬性可以使用，它是一個內建就有的屬性。
+
+但是，React會認為`this.props.children`屬性是一個含糊不清(opaque)的資料結構，為什麼呢？因為它有可能有幾種回傳情況:
 
 - 子節點不存在，資料為"undefined"：例如`<Component />`或`<Component></Component>`
 - 只有單一個子節點，資料為"單一物件/元件"：例如`<Component><span></span></Component>`或`<Component><ChildComponent></ChildComponent><Component>`
@@ -203,13 +205,13 @@ render() {
 
 React中在[React.Children](https://facebook.github.io/react/docs/react-api.html#react.children)裡有幾個方法來協助你處理`this.props.children`的資料，其中`map`與`forEach`和陣列的方法有點相像:
 
-- React.Children.map：迭代(iterate)資料並呼叫你提供的回調函式，回傳陣列或undefined
-- React.Children.forEach：迭代(iterate)資料並呼叫你提供的回調函式，和map類似，但不會回傳陣列
+- React.Children.map：迭代(iterate)資料並呼叫你提供的回調(回呼)函式，回傳陣列或undefined
+- React.Children.forEach：迭代(iterate)資料並呼叫你提供的回調(回呼)函式，和map類似不會回傳陣列
 - React.Children.count：回傳>=0的個數
 - React.Children.only：回傳一個子元件，只能用於單個子元件的情況
 - React.Children.toArray：回傳為陣列型態
 
-一個經常會被使用的樣式是迭代(iterate)所有的子節點，複制新的子節點後加上新的props值:
+一個經常會被使用的樣式是迭代(iterate)所有的子節點，拷貝出新的子節點後加上新的props值:
 
 ```js
 const newChildren = React.Children.map(this.props.children, function(child) {
@@ -217,7 +219,7 @@ const newChildren = React.Children.map(this.props.children, function(child) {
 })
 ```
 
-看到這裡，你可能又會有些疑問，this.props.children是用來作什麼用的？
+看到這裡，你可能又會有些疑問，`this.props.children`是用來作什麼的？
 
 基本上，它是一個因為React元件(或元素)產生階層結構後，所設計出來對應真實DOM元素的東西。在這個樹狀階層的結構中，位於上層(外層)的元件它可以對位於下層(內層)的元件，作一些特別的事情，因為在下層(內層)的元件，它實際上算是上層(外層)元件的props(屬性)的其中一個。
 
@@ -253,7 +255,7 @@ const Parent = (props) => (
 )
 ```
 
-利用這個`this.props.children`的設計就是在社群上，主要用來開發React元件的一種常見作法，尤其是用來"增強"現有元件的那些，例如改變元件的外觀，幫元件自動加上某些功能之類的。上面也說了一個用了`cloneElement`這個方法的樣式，它更可以幫原本的下層(內層)元件附加上額外的props或style值。最新的還有一種稱為"F-as-child"的語法，我在之前的JSX語法指引文章中有提到，它是另一個界於目前灰色地帶的樣式語法(也就是有一些爭議性)，但它給開發者更多的彈性空間，內容會太細節就不再多說，有興趣可看這篇[Function as Child Components](https://medium.com/merrickchristensen/function-as-child-components-5f3920a9ace9#.j7apfv22y)文章。
+利用這個`this.props.children`的設計就是目前在社群上，主要用來開發React元件的一種常見作法，尤其是用來"增強"現有元件的那些，例如改變元件的外觀，幫元件自動加上某些功能之類的。上面也說了一個用了`cloneElement`這個方法的樣式，它更可以幫原本的下層(內層)元件附加上額外的props或style值。最新的還有一種稱為"F-as-child"的語法，我在之前的JSX語法指引文章中有提到，它是另一個界於目前灰色地帶的樣式語法(也就是有一些爭議性)，但它給開發者更多的彈性空間，內容會太細節就不再多說，有興趣可看這篇[Function as Child Components](https://medium.com/merrickchristensen/function-as-child-components-5f3920a9ace9#.j7apfv22y)文章。
 
 ### refs屬性
 
@@ -266,21 +268,21 @@ const Parent = (props) => (
 1. 與現有的程式碼或函式庫的整合: 有些現有的程式碼或函式庫，例如用Google地圖的API要整合來寫應用，在這API裡有非得要存取到DOM元素的場合，當然我這裡指的是放上[Google Maps API
 ](https://developers.google.com/maps/)上的這個API。
 
-2. 在特定的某些場合，為了簡化資料流或資料呈現: 在我們本章的最上面用了這個`refs`屬性，目的是為了簡化資料流，這會經常用於與使用者互動的UI表單元素之中，有些資料例如文字輸入、選項勾選，只是一種臨時性的資料，用`refs`屬性的作用是直接從真實DOM元素實體來抓取資料。這麼簡單的事情，透過state與setState的整個設計來作，的確是有點"殺雞用牛刀"的感覺，這些臨時性的資料，與整個應用程式執行期間的資料一起儲放在同一個地方，也是一種很有問題的設計。
+2. 在特定的某些元素上，為了簡化資料流或資料呈現: 在我們本章的最上面用了這個`refs`屬性，目的是為了簡化資料流，這會經常用於與使用者互動的UI表單元素之中，有些資料例如文字輸入、選項勾選，只是一種臨時性的資料，用`refs`屬性的作用是直接從真實DOM元素實體來抓取資料。這麼簡單的事情，透過state與setState的整個設計來作，的確是有點"殺雞用牛刀"的感覺，這些臨時性的資料，與整個應用程式執行期間的資料一起儲放在同一個地方，也是一種很有問題的設計。
 
-但是，網路上一直有反對的聲音，認為這個`refs`屬性並不是所謂的"緊急逃生出口"，而是一個大開方便之門的屬性。主要是因為有些開發者一開始就會在React元件中怎麼使用`refs`，這會造成了一些誤解，以為原來在React中都是這樣作的。實際上React官方在不久前才改版的舊版官網上，一開始的入門教學範例中，就用了這個屬性來存取網頁上的表單元件的輸入值。所以老實說這不是開發者的問題，我個人覺得反而是React官方有點誤導初學者，當然後來引發了一些批評，現在新版的入門教學中已經不是用這個方式。
+但是，網路上一直有反對的聲音，認為這個`refs`屬性並不是所謂的"緊急逃生出口"，而是一個大開方便之門的屬性。主要是因為有些初學者一開始就會在React元件中使用`refs`，造成了一些誤解，以為原來在React中都是這樣作的。實際上React官方在不久前才改版的舊版官網上，一開始的入門教學範例中，就用了這個屬性來存取網頁上的表單元件的輸入值，當然它的目的是要說明這個`refs`屬性可以作為與現有程式的一個暫時性的整合解決方案。當然後來引發了一些批評，現在新版的入門教學中已經不是用這個方式。
 
-當有些人有提出批評的建議，再加上有可能會造成React中與使用`refs`程式碼效能影響的問題，與`refs`相關的一些方法，在最近幾個版本的React會看到經常被更動，有些在網路上的教學文章，有可能雖然才不到1年前發佈，但實際上裡面用的一些方法都在最近的React版本被棄用或根本就移除了，這是在使用時一定要特別注意的地方。
+當有些人有提出批評的建議，再加上有可能會造成React中與使用`refs`程式碼影響到效能的問題，與`refs`相關的一些方法，在最近幾個版本的React會看到經常被更動，有些在網路上的教學文章，有可能雖然才不到1年前發佈，但實際上裡面用的一些方法都在最近的React版本被棄用或根本就移除了，這是在使用時一定要特別注意的地方。
 
 在元件/元素中的屬性以單數名詞`ref`來指定值，但在取用與處理時是用複數名詞`refs`，這也是個要注意的地方。而且在程式碼撰寫期間並無法確定它會是什麼類型的值，也只能假設它可能會有值，這是個很特別的使用概念。主要是因為整個React應用需要經過`ReactDOM.render()`呼叫在真實的DOM元素渲染後，才會真正出現`refs`的可用值，所以你會看到官方在說明上，說它這是一種元素/元件的"背後支持的實體"(backing instance)。
 
 #### 無狀態(stateless)元件中使用refs屬性
 
-按照之前的官方文件說明，無狀態(stateless)元件(函式語法的元件)的`refs`一律都是`null`，也就是說如果你要使用它，必須是在一個有狀態(state)的元件才能使用。但是，這個規則後來被打破了，要不然你今天也不會看到我們在上面的函式型元件範例裡用了這個`refs`，先講為何無狀態(stateless)元件(函式語法的元件)是無法有`refs`，因為它並有生命週期的相關方法可用，由React管控的元件/元素，在渲染到真實DOM元素上的過程，是有生命週期的，從掛載(mount)到呈現，到在應用使用過程中的更新(或重新渲染)，到最後的卸載(unmount)，有整套的生命週期，`refs`是一個需要在元件/元素真的是已經出現在網頁上時，才會有可用值的一個屬性。無狀態(stateless)元件用不了生命週期的相關方法，自然也判斷不出來現在這元件/元素是有沒有真的出現在真實DOM上，也沒辦法在生命週期的相關方法(例如像"目前此元件已經掛載完成"的這種方法)中存取到它。
+按照之前的官方文件說明，無狀態(stateless)元件(函式語法的元件)的`refs`一律都是`null`，也就是說如果你要使用它，必須是在一個有狀態(state)的元件才能使用。但是，這個規則後來被打破了，要不然你今天也不會看到我們在上面的函式型元件範例裡用了這個`refs`，先講為何無狀態(stateless)元件(函式語法的元件)是無法有`refs`，因為它並沒有生命週期的相關方法可用，由React管控的元件/元素，在渲染到真實DOM元素上的過程，是有生命週期的，從掛載(mount)到呈現，到在應用使用過程中的更新(或重新渲染)，到最後的卸載(unmount)，有整套的生命週期，`refs`是一個需要在元件/元素真的是已經出現在網頁上時，才會有可用值的一個屬性。無狀態(stateless)元件用不了生命週期的相關方法，自然也判斷不出來現在這元件/元素是有沒有真的出現在真實DOM上，也沒辦法在生命週期的相關方法(例如像"目前此元件已經掛載完成"的這種方法)中存取到它。
 
 所以現在無狀態(stateless)元件是怎麼存取得到`refs`？看起來上面說的這設計是很合理，而且現在的無狀態(stateless)元件一樣也是沒這些生命週期的相關方法可用不是嗎？你可能會有這些疑問。
 
-按照現在官網上的[說明](http://reactjs.cn/react/docs/more-about-refs.html#summary)，我簡單摘譯最後一段:
+按照現在官網上的[說明](http://reactjs.cn/react/docs/more-about-refs.html#summary)， 以下簡單摘譯最後一段:
 
 > Refs可能沒有依附(attached)到無狀態(stateless)函式上，因為元件沒有背後支持的實體(backing instance)。你可以總是用包裝一個無狀態(stateless)元件在一個標準合成元件上，然後依附一個ref到標準合成元件上。
 
@@ -294,7 +296,7 @@ const Parent = (props) => (
 
 #### refs屬性如何使用
 
-在目前的v15版本的文件中有說明"不建議"以字串值作為元件`ref`的指定值的方式，而是要改用callbacks(回調)指定值的方式，現在ESLint的eslint-plugin-react外掛已經有這個檢查規則，下面的程式碼範例是來自[no-string-refs](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)規則，這規則是建議你不要用字串值指定給`ref`。雖然現在還有很多的程式碼範例，都使用這種字串指定值的方式，基本上的用法就是在render方法中的元素指定`ref`值，然後用`this.refs`來取用它。
+在目前的v15版本的文件中有說明"不建議"以字串值作為元件`ref`的指定值的方式，而是要改用callbacks(回調、回呼)指定值的方式，現在ESLint的eslint-plugin-react外掛已經有這個檢查規則，下面的程式碼範例是來自[no-string-refs](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)規則，這規則是建議你不要用字串值指定給`ref`。雖然現在還有很多的程式碼範例，都使用這種字串指定值的方式，基本上的用法就是在render方法中的元素指定`ref`值，然後用`this.refs`來取用它。
 
 如果你指定的是`ref="myRefString"`，取用時建議使用`this.refs['myRefString']`。獲取到`ref`的值後，會指定到另一個this中的屬性，通常是是在`componentDidMount`方法中可以使用獲取的`refs`值。以下為範例:
 
