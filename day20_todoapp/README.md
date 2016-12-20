@@ -40,9 +40,9 @@
 
 一開始我們先把檔案的結構整理一下，目前在src中只有一個components目錄，現在多了兩個，所以在src中會有三個目錄:
 
-- components: 放所有元件的程式檔案，有App.js, TodoList.js, TodoItem.js, TodoAddForm.js
+- components: 放所有元件的程式檔案，有`App.js`, `TodoList.js`, `TodoItem.js`, `TodoAddForm.js`
 - definitions: 會有一個`TodoTypeDefinition.js`，用於集中所有用到的靜態類型定義
-- style: 目前有styles.js，集中所有用到的內嵌樣式。另外之後會有一個App.css，是在這個應用中所有的元件外觀CSS檔案
+- style: 目前有`styles.js`，集中所有用到的內嵌樣式。另外之後會有一個`App.css`，是在這個應用中所有的元件外觀CSS檔案
 
 再來看獨立出來的`TodoAddForm`元件，它只有一個文字輸入框，我把它改寫為無狀態的元件，也就是用函式語法來寫元件，你可以直接看原始程式碼檔案，以下是分段的解說。
 
@@ -95,7 +95,7 @@ const TodoAddForm = ({ placeholderText, onItemAdd }: TodoAddFormProps) => {}
       />
 ```
 
-TodoItem元件沒有什麼太大的變化，它與TodoAddForm的寫法都是類似的，就儘量寫得愈簡單愈好。唯一比較大的不同，是它取消了index這個props(屬性)中的值，因為在它的上層元件指定給它(TodoItem)的props值時，直接使用一個箭頭函式在裡面加上索引值就可以正確定義出要作變化的方法。TodoItem元件如下面的程式碼:
+TodoItem元件沒有什麼太大的變化，它與TodoAddForm的寫法都是類似的，就儘量寫得愈簡單愈好。唯一比較大的不同，是它取消了index這個props(屬性)中的值，因為在它的上層元件指定給它(TodoItem)的props值時，直接使用一個箭頭函式在裡面加上索引值就可以正確定義出要作變化的方法，至於這樣作會不會影響效能，我覺得應該是沒影響，實際上可以這樣作就是。TodoItem元件如下面的程式碼:
 
 ```js
 const TodoItem = ({ title, style, onItemClick }: TodoItemProps) => (
@@ -110,7 +110,7 @@ const TodoItem = ({ title, style, onItemClick }: TodoItemProps) => (
 )
 ```
 
-TodoList元件中的之前的程式碼，都移往App.js中，它會變成一個單純的外層式元件，也是一個無狀態元件，程式碼如下:
+TodoList元件中的之前的程式碼，都移往`App.js`中，它會變成一個單純的外層式元件，也會是一個無狀態元件，程式碼如下:
 
 ```js
 const TodoList = ({children}: TodoListProps) => (
@@ -118,7 +118,7 @@ const TodoList = ({children}: TodoListProps) => (
 )
 ```
 
-這邊唯一要注意的是`TodoListProps`的類型定義，定義檔`TodoTypeDefinition.js`中的類型定義如下，這是一個對React元素的特別定義語法，你可參考這裡的[討論說明](https://github.com/facebook/flow/issues/1355)。程式碼如下:
+這邊唯一要注意的是`TodoListProps`的類型定義，定義檔`TodoTypeDefinition.js`中的類型定義如下，這是一個對React元素類型的特別定義語法，children因為也有可能不存在，所以有加問號(?)代表可選的屬性，更多資訊可參考這裡的[討論說明](https://github.com/facebook/flow/issues/1355)。程式碼如下:
 
 ```js
 export type TodoListProps = {
@@ -126,7 +126,7 @@ export type TodoListProps = {
 }
 ```
 
-App元件正式成為這個應用的最主要元件，它裡面的state是這支應用程式領域的狀態值，也變得更為單純，像下面這樣:
+App元件正式成為這個應用的最主要元件，它裡面的`state`是這支應用程式領域的狀態，`state`的結構也變得更為單純，像下面這樣:
 
 ```js
 state: {
@@ -140,7 +140,7 @@ this.state = {
   }
 ```
 
-Item的類型定義一樣在定義檔`TodoTypeDefinition.js`中，像下面這樣的物件結構:
+Item的類型定義一樣在定義檔`TodoTypeDefinition.js`中，它是像下面這樣的物件結構:
 
 ```js
 export type Item = {
@@ -150,7 +150,7 @@ export type Item = {
 }
 ```
 
-其他的方法都是複製自之前的TodoList.js中，就不再多說。在render中的結構也變得更為清楚。在TodoItem中，key值改為用item物件的id值來指定，style的部份也用獨立的一個styles物件來指定，另外也少了index值，可以在onItemClick指定時，用箭頭函式來定義要刪除掉哪一個索引值即可:
+其他的方法都是複製自之前的`TodoList.js`中，就不再多說。在render中的結構也變得更為清楚。在JSX語法中使用TodoItem元件指定屬性時，key值改為用item物件的id值來指定，style的部份也用獨立的一個styles物件來指定，另外也少了index值，可以在onItemClick指定時，用箭頭函式來定義要刪除掉哪一個索引值即可:
 
 ```js
 render() {
@@ -359,3 +359,15 @@ class MyComponent extends Component {
 ```
 
 總之這個`findDOMNode`方法目前雖然可以用，但感覺上就是大概是準備棄用或改掉的氣氛，現在是因為還有很多的範例有使用到它所以保留而已。
+
+---
+
+## 結論
+
+在本章中，我曾說過應用程式領域的狀態，它是一個重要的議題。每支應用程式都應該有一個獨立於所的元件的狀態或是儲存資料的地方，以及集中所有更動這個資料的地方，這在常見的MVC設計模式中，是屬於Model(模型)的部份。但不論是MVC或其他的設計模式，其目的都是為了要清楚分離應用中的每個組成分子的獨立功能，讓程式碼或元件都可以重覆利用、容易擴充，另一方面是能妥善組織與管理整體的資料流、交互作用等等關係。在較完善的架構之下，應用程式才有辦法規模化，對未來的應用的維護或最佳化，也會更佳容易。當然，這說的都是大型的應用程式所應該具備的條件，對於小型的應用，或是簡單的範例應用，實際上根本不需要也不應該這樣作，花了時間架構出來但實際上用不著。
+
+問題是，你如何學習React中較為完善的應用架構？
+
+這是一個雞生蛋蛋生雞的問題，沒深入學過React的各種特性，實際寫過真正的應用，你又怎麼比較得出來這個架構是比較好的，那個是比較差的？在本章的例子是一個很小型的應用，或許用不著這麼講究。React是個用來開發網站上的應用的新想法，這些教學的主要目的是要讓你重新思考一些事情，一些你可能從來在JavaScript開發應用時的事情。舉個例子來說，你應該開始思考把整個應用程式的功能與操作介面元件化，讓它們獨立出一個個的功能元件，或是把整個應用的狀態集中到一個狀態中來管理，多多寫出純粹函式，而對有副作用的程式加以管控。
+
+架構一個完善的應用程式結構，是一門學問。而且它需要進一步對你的應用程式更加理解與思考，像是未來要如何擴充功能，哪些地方目前並沒作作得太好之類的。這是一個需要不斷改善、學習與調整的工作。這個的例子中能作的改造部份很有限，也不一定是完全的作法，但這大概是現在我所能作的改造成果。或許，你可以有更多好的想法，找出更好的架構方式也說不定。
