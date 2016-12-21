@@ -5,7 +5,7 @@ import TodoItem from './TodoItem'
 import TodoAddForm from './TodoAddForm'
 import TodoEditForm from './TodoEditForm'
 
-//匯入item靜態類型的定義
+//匯入Item物件靜態類型的定義
 import type { Item } from '../definitions/TodoTypeDefinition.js'
 
 //匯入css檔
@@ -71,7 +71,7 @@ class App extends Component {
     //拷貝一個新陣列
     const newItems = [...this.state.items]
 
-    //切換isEditing的布林值
+    //項目的標題指定為傳入參數，更新標題
     newItems[index].title = title
 
     //切換isEditing的布林值
@@ -94,24 +94,24 @@ class App extends Component {
             <div className="panel-body">
               <TodoAddForm placeholderText="項目文字寫在這，按Enter鍵可以加入列表中" onItemAdd={this.handleItemAdd} />
               <TodoList>
-              {
-                this.state.items.map((item, index) => (
-                    (item.isEditing)
-                    ? <TodoEditForm
-                        key={item.id}
-                        title={item.title}
-                        onItemUpdate={(title) => { this.handleEditItemUpdate(index, title) }}
-                      />
-                    : <TodoItem
-                        key={item.id}
-                        isCompleted={item.isCompleted}
-                        title={item.title}
-                        onItemDoubleClick={() => { this.handleEditItem(index) }}
-                        onItemClick={() => { this.handleStylingItem(index) }}
-                      />
+                {
+                  this.state.items.map((item, index) => (
+                      (item.isEditing)
+                      ? <TodoEditForm
+                          key={item.id}
+                          title={item.title}
+                          onItemUpdate={(title) => { this.handleEditItemUpdate(index, title) }}
+                        />
+                      : <TodoItem
+                          key={item.id}
+                          isCompleted={item.isCompleted}
+                          title={item.title}
+                          onItemDoubleClick={() => { this.handleEditItem(index) }}
+                          onItemClick={() => { this.handleStylingItem(index) }}
+                        />
+                    )
                   )
-                )
-              }
+                }
               </TodoList>
             </div>
             <div className="panel-footer">雙點擊項目可以進行編輯，按下Enter後儲存</div>

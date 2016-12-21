@@ -17,22 +17,22 @@ const TodoEditForm = ({ title, onItemUpdate }: TodoEditFormProps) => {
         ref={el => { titleField = el }}
         autoFocus
         onBlur={(e) => {
-          if (titleField.value.trim() 
-              && e.target instanceof HTMLInputElement) {  
-            
-            //更新某個索引值的標題    
-            onItemUpdate(titleField.value)
-          }
+            if (titleField.value.trim() 
+                && e.target instanceof HTMLInputElement) {  
+              
+              //更新標題    
+              onItemUpdate(titleField.value)
+            }
           }
         }
         onKeyPress={(e) => {
-          if (titleField.value.trim() 
-              && e.target instanceof HTMLInputElement 
-              && e.key === 'Enter') {  
-            
-            //更新某個索引值的標題    
-            onItemUpdate(titleField.value)
-          }
+            if (titleField.value.trim() 
+                && e.target instanceof HTMLInputElement 
+                && e.key === 'Enter') {  
+              
+              //更新標題    
+              onItemUpdate(titleField.value)
+            }
           }
         }
       />
