@@ -1,14 +1,14 @@
 # React篇 - TodoApp程式 + 編輯項目
 
-![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day20_todoapp/asset/intro.png)
+![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day21_todoapp_edit/asset/intro.png)
 
 今天的主題是要加入項目的編輯功能，以及更多的CSS樣式。至於重點部份有兩個，第一個是CSS樣式的加入，第二個是如何切換項目的編輯。
 
 這個程式最後的呈現結果，會是在網頁上出現一個文字輸入框，當你輸入文字後按下Enter鍵，就會把文字加到下面的列表中，每個項目用滑鼠點按一下，會觸發這個項目的樣式變化。就像下面的動態圖片這樣:
 
-![TodoApp樣式元件展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day20_todoapp/asset/day21_demo.gif)
+![TodoApp樣式元件展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day21_todoapp_edit/asset/day21_demo.gif)
 
-> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day20_todoapp/)，所有的程式碼也在裡面。
+> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day21_todoapp_edit/)，所有的程式碼也在裡面。
 
 當程式愈來愈複雜的時候，實作經驗會愈來愈重要，知道了很多基礎知識雖然重要，但更重要的是實作經驗，以及解決問題的能力。有時候，一個小問題就有可能困住很久才能解決。
 
