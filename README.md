@@ -18,7 +18,7 @@ IT邦幫忙 2017鐵人賽
 2. ESlint
 3. Flow
 
-## ES6篇 (10 days)
+## ES6篇 (9 days)
 
 1. let /const
 2. Arrow Function
@@ -26,33 +26,40 @@ IT邦幫忙 2017鐵人賽
 4. rest params & spread operator
 5. De-structuring Assignment
 6. Class
-7. import/export
-8. Object properties shorthand
-9. Array方法
-10. Object方法
+7. module system
+8. pure function & side effect
+9. object enhancement
 
-## ReactJS篇 (10-12 days)
+> 上面章節已結束，共13篇
 
-1. create-react-app / HelloWorld / JSX
-2. textinput
-3. textinput+
-4. search/filter
-5. search+
-6. sort
-7. sort+
-8. ajax/fetch 生命週期
-9. refs
-10. cloneElement
-11. Style
-12. Animate
-13. HOC
-14. react-router
+## ReactJS篇 (11 days !! only)
+
+1. create-react-app / HelloWorld
+2. HelloWorld explain
+3. textinput(state)
+4. textinput+(child -> owner)
+5. textinput+Style
+6. textinput+edit field
+7. search/filter
+8. sort
+9. deeper JSX
+10. ajax/fetch / lifecycle
+11. react-router
+
+---
 
 ## Redux篇 (6 days)
+
+> Start Day 25
 
 1. ex1 - easy (textinput)
 2. ex2 - ex1+ (textinput+delete)
 3. ex3 - react w/o connect
-4. ex4 - react w connect
-5. ex5 - react refactor
-6. ex6 - thunk async(side effect)
+4. ex4 - react w connect + refactor
+5. ex6 - thunk async(side effect)
+
+## 後記 (1 day)
+
+> Start Day 30
+
+1. 參加心得&感想
