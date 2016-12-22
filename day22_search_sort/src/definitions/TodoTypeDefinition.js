@@ -7,10 +7,12 @@ export type Item = {
   isEditing: boolean,
 }
 
+export type SortType = '' | 'asc' | 'desc'
+
 export type TodoListProps = {
   children?: React$Element<*>,
   onItemFilter: Function,
-  onItemSort: Function,
+  onItemSort: (x: SortType) => void,
   sortType: string,
 }
 

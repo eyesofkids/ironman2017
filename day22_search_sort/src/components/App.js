@@ -13,15 +13,15 @@ import type { Item } from '../definitions/TodoTypeDefinition.js'
 import '../style/bootstrap.css'
 import '../style/animate.css'
 
-let keepSearchedItems = []
-let isSearching = false
-let isFilteringOut = false
+let keepSearchedItems: Array<Item> = []
+let isSearching: boolean = false
+let isFilteringOut: boolean = false
 
 class App extends Component {
   // 預先定義state的結構
   state: {
     items: Array<Item>,
-    sortType: '' | 'asc' | 'desc'
+    sortType: SortType
   }
 
   //建構式
@@ -148,7 +148,7 @@ class App extends Component {
   }
 
    //處理排序所有項目的方法
-  handleItemSort = (sortType: string) => {
+  handleItemSort = (sortType: SortType) => {
       
       let newItems = [...this.state.items]
 
