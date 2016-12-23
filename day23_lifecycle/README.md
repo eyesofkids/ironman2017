@@ -4,9 +4,9 @@
 
 今天的主題是要加入與伺服器資料互動的功能，一般我們所說的在網頁上的JavaScript應用與伺服器溝通，指的就是使用Ajax技術，傳送資料到伺服器或是與伺服器要資料。我們的範例程式主要會用在一開始載入資料、勾選為已完成的項目時，以及編輯現有的項目時這三個情況。
 
-這個程式最後的呈現結果，就像下面的動態圖片這樣:
+這個程式最後的呈現結果，就像下面的動態圖片這樣，重點是在於它會傳出與外部伺服器溝通的資料:
 
-![TodoApp元件展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day23_lifecycle/asset/day22_demo.gif)
+![TodoApp元件展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day23_lifecycle/asset/day23_demo.gif)
 
 > 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day23_lifecycle/)，所有的程式碼也在裡面。
 
@@ -20,7 +20,7 @@ AJAX這個技術名詞的出現是在十年前(2005)，其中內容包含XML、J
 
 - [Fetch API](https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part4/ajax_fetch.html): 這是一個API，是HTML5標準中的新特性，當然它是一個實作在JavaScript的新API，Fetch API是一個完全以為基礎的API，Fetch並不是一個單純的XHR擴充加強版或改進版本，它是一個用不同角度思考的設計，雖然是可以作類似的事情。此外，Fetch還是基於[Promise](https://www.gitbook.com/book/eyesofkids/javascript-start-es6-promise/details)語法結構的，而且它的設計足夠低階，這表示它可以依照實際需求進行更多彈性設定。相對於XHR的功能來說，Fetch已經有足夠的相對功能來取代它，但Fetch並不僅於此，它還提供更多有效率與更多擴充性的作法。
 
-上面都是這個範例程式中有用到的部份，因為這些內容如果要解說完，可能光說這些30天都不夠用，就請再自行學習了。
+上面都是這個範例程式中有用到的部份，這些內容如果要整個解說完，可能光說這些30天都不夠用，我附的連結中的資料就請再自行學習了。
 
 ## 程式碼說明
 
