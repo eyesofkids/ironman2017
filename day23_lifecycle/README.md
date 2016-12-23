@@ -10,8 +10,6 @@
 
 > 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day23_lifecycle/)，所有的程式碼也在裡面。
 
-AJAX這個技術名詞的出現是在十年前(2005)，其中內容包含XML、JavaScript中的XMLHttpRequest物件、HTML與CSS等等技術的整合應用方式，這個名詞並非專指某項特定技術或是軟體。所謂的AJAX技術在JavaScript中，即是以XMLHttpRequest物件(簡稱為XHR)為主要核心的實作。正如它的名稱，它是用於客戶端對伺服器端送出httpRequest(要求)的物件，使用的資料格式是XML格式，現在可能JSON格式才是最為流行的資料格式。
-
 在解說之前，本篇使用的一些額外的工具與知識，在這篇文章不會再多作說明，這個就你需要進一步學習了，下面有附它們的連結:
 
 - [json-server](https://github.com/typicode/json-server): 這是一個架在Node.js上的用於測試JSON格式資料的伺服器，而且是REST API，裡面用了lowdb，所以其實它是一個具有資料庫寫入、讀取、查詢的功能的伺服器。這個工具在Github上有1萬8千個星，如果你要開發像我們這種JavaScript應用，而且是用json交換資料的應用，學會用這個工具，保証讓你開發的日子輕鬆很多。
