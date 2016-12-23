@@ -7,7 +7,7 @@ import TodoEditForm from './TodoEditForm'
 import TodoSearchForm from './TodoSearchForm'
 
 //匯入Item物件靜態類型的定義
-import type { Item } from '../definitions/TodoTypeDefinition.js'
+import type { Item, SortType } from '../definitions/TodoTypeDefinition.js'
 
 //匯入css檔
 import '../style/bootstrap.css'
@@ -21,7 +21,7 @@ class App extends Component {
   // 預先定義state的結構
   state: {
     items: Array<Item>,
-    sortType: SortType
+    sortType: SortType,
   }
 
   //建構式
@@ -108,14 +108,14 @@ class App extends Component {
     // 並設定isSearching為true，表示正準備搜尋
     if(!isSearching) {
       isSearching = true
-      keepSearchedItems = [...this.state.items]    
+      keepSearchedItems = [...this.state.items]
     }
-    
+
     // 當還在搜尋(isSearching為true)時，如果searchword是空字串，代表使用者已經把文字框清空了
     // 準備回復原先的列表資料情況，並設定(isSearching為false)
     if(isSearching && searchword === '') {
       isSearching = false
-      
+
       this.setState({
         items: keepSearchedItems,
       })
@@ -125,7 +125,7 @@ class App extends Component {
       const newItems  = keepSearchedItems.filter((item) => (
           item.title.includes(searchword)
       ))
-      
+
       //整個陣列重新更新
       this.setState({
         items: newItems,
@@ -135,12 +135,12 @@ class App extends Component {
 
   //處理切換過濾是否要顯示已完成項目
   handleItemFilter = () => {
-     
+
      //isFilteringOut是在這個模組的作用域變數
-     isFilteringOut = !isFilteringOut 
+     isFilteringOut = !isFilteringOut
 
      const newItems = [...this.state.items]
-      
+
       //整個陣列重新更新
       this.setState({
         items: newItems,
@@ -149,17 +149,17 @@ class App extends Component {
 
    //處理排序所有項目的方法
   handleItemSort = (sortType: SortType) => {
-      
+
       let newItems = [...this.state.items]
 
       if(sortType === 'asc') {
         //按筆劃從少到多排序
-        newItems = newItems.sort((a, b) => (    
+        newItems = newItems.sort((a, b) => (
             a.title.localeCompare(b.title, 'zh-Hans-TW-u-co-stroke')
           )
         )
       }
-    
+
       if(sortType === 'desc') {
         //按筆劃從多到少排序
         newItems = newItems.sort((a, b) => (
@@ -190,7 +190,7 @@ class App extends Component {
                   this.state.items.map((item, index) => {
                       if(isFilteringOut && item.isCompleted){
                         return null
-                      } 
+                      }
                       return  (
                         (item.isEditing)
                         ? <TodoEditForm

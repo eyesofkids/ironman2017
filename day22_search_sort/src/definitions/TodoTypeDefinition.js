@@ -2,7 +2,7 @@
 
 export type Item = {
   id: number,
-  title: string, 
+  title: string,
   isCompleted: boolean,
   isEditing: boolean,
 }
@@ -16,7 +16,7 @@ export type TodoListProps = {
   sortType: string,
 }
 
-export type TodoItemProps = { 
+export type TodoItemProps = {
   title: string,
   isCompleted: boolean,
   onItemClick: Function,

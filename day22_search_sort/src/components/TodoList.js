@@ -10,7 +10,7 @@ const TodoList = ({children, onItemFilter, onItemSort, sortType}: TodoListProps)
   return (
     <div>
       <label>
-        <input 
+        <input
               type="checkbox"
               defaultChecked
               onClick={onItemFilter}
