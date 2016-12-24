@@ -1,10 +1,10 @@
 # React篇 - 路由器(router) 與 本篇小結
 
-![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day22_search_sort/asset/intro.png)
+![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day24_react_router/asset/intro.png)
 
 今天的主題是路由器(router)，以及關於React篇的一些總結資訊。今天並沒有把路由器整合到原先的TodoApp之中，所以沒有範例。
 
-> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day22_search_sort/)，所有的程式碼也在裡面。
+> 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day24_react_router/)，所有的程式碼也在裡面。
 
 ## 路由器(router)是什麼
 
