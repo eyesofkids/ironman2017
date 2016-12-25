@@ -41,7 +41,7 @@ store.subscribe(render)
 
 // 監聽事件到 "itemadd" 按鈕,
 // 點按事件會觸發store dispatch Action(store發送動作)，例如
-// `store.dispatch({ type: 'ADD_ITEM', textValue })
+// store.dispatch({ type: 'ADD_ITEM', textValue })
 document.getElementById('itemadd')
   .addEventListener('click', () => {
     const itemText = document.getElementById('itemtext')
