@@ -32,6 +32,8 @@ IT邦幫忙 2017鐵人賽
 
 > 上面章節已結束，共13篇
 
+---
+
 ## ReactJS篇 (11 days !! only)
 
 1. create-react-app / HelloWorld
@@ -44,13 +46,15 @@ IT邦幫忙 2017鐵人賽
 8. sort
 9. deeper JSX
 10. ajax/fetch / lifecycle
-11. react-router
+11. refs
+12. props.children / cloneElement
+13. react-router
+
+> 上面章節已結束，共11篇
 
 ---
 
-## Redux篇 (6 days)
-
-> Start Day 25
+## Redux篇 (5 days)
 
 1. ex1 - easy (textinput)
 2. ex2 - ex1+ (textinput+delete)
@@ -59,7 +63,5 @@ IT邦幫忙 2017鐵人賽
 5. ex6 - thunk async(side effect)
 
 ## 後記 (1 day)
-
-> Start Day 30
 
 1. 參加心得&感想
