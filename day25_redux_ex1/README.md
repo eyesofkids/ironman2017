@@ -4,7 +4,7 @@
 
 今天的主題是Redux，一開始我們先看它是如何運作的，Redux並不是只能在React應用中使用，而是可以在一般的應用中使用。第一個例子是一個簡單的JavaScript應用，它與最早之前的我們的TodoList應用的功能有點像。
 
-這個程式最後的呈現結果，就像下面的動態圖片這樣，重點是在於它會傳出與外部伺服器溝通的資料:
+這個程式最後的呈現結果，就像下面的動態圖片這樣，重點是在於下面有個Redux DevTools，它有時光旅行除錯的功能，可以倒帶重播你作過的任何資料上的變動:
 
 ![Redux範例一展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day25_redux_ex1/asset/day25_demo.gif)
 
@@ -51,12 +51,12 @@ import { createStore } from 'redux'
 // @Reducer
 //
 // action payload = action.text
-// 使用純粹函式的陣列push，不能有副作用
+// 使用純粹函式的陣列unshift，不能有副作用
 // state(狀態)一開始的值是空陣列`state=[]`
 function addItem(state = [], action) {
   switch (action.type) {
     case 'ADD_ITEM':
-      return [...state, action.text]
+      return [action.text, ...state]
     default:
       return state
   }
@@ -131,19 +131,19 @@ reducer裡面通常會用動作的類型(action.type)用switch來區分要執行
 // @Reducer
 //
 // action payload = action.text
-// 使用純粹函式的陣列push，不能有副作用
+// 使用純粹函式的陣列unshift，不能有副作用
 // state(狀態)一開始的值是空陣列`state=[]`
 function addItem(state = [], action) {
   switch (action.type) {
     case 'ADD_ITEM':
-      return [...state, action.text]
+      return [action.text, ...state]
     default:
       return state
   }
 }
 ```
 
-上面的`[...state, action.text]`，它就是純粹函式寫法的陣列push方法，之前在TodoList中你應該也有見過。
+上面的`[action.text, ...state]`，它就是純粹函式寫法的陣列unshift方法，之前在TodoList中你應該也有見過。
 
 第三步，是由寫好的reducer，建立store，其實這沒什麼好說的，就用匯入的`createStore`方法把reducer傳入就行了。正常情況下是用`const store = createStore(addItem)`，因為你要使用瀏覽器中的[Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)，所以要改寫成下面這樣的程式碼:
 

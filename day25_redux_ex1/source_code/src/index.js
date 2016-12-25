@@ -4,12 +4,12 @@ import { createStore } from 'redux'
 // @Reducer
 //
 // action payload = action.text
-// 使用純粹函式的陣列push，不能有副作用
+// 使用純粹函式的陣列unshift，不能有副作用
 // state(狀態)一開始的值是空陣列`state=[]`
 function addItem(state = [], action) {
   switch (action.type) {
     case 'ADD_ITEM':
-      return [...state, action.text]
+      return [action.text, ...state]
     default:
       return state
   }
