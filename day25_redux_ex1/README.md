@@ -403,3 +403,5 @@ export function addTodo(text) {
 這個`addTodo`函式，有一個傳入參數，這個傳入參數就會用於組成Action物件中的`payload`(有效資料)。
 
 如果一個Action物件簡單到連payload(有效資料)都沒有，通常會是個固定payload(有效資料)的動作，例如每動作一次+1或-1，或是每動作一次在true或false值切換，那麼在Redux中允許連Action或Action Creator都可以不用寫了。但是這種情況大概只有在很小的應用，或是學習階段的範例才會這樣，如果應用還是有一定程度的複雜度，一定都是要寫出來的。
+
+> 註: Action Creator在Redux中也是要求是個純粹函式。
