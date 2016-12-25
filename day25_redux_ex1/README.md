@@ -215,7 +215,6 @@ document.getElementById('itemadd')
 
 Redux的官網中用一句話來說明Redux是什麼:
 
-> Redux is a predictable state container for JavaScript apps.
 > Redux是針對JavaScript應用的可預測狀態容器
 
 這句話說來簡短，其實是有幾個涵義的:
@@ -249,7 +248,6 @@ Redux的官網中用一句話來說明Redux是什麼:
 
 #### 單一真相來源(Single source of truth)
 
-The state of your whole application is stored in an object tree within a single store.
 > 你的整個應用中的state(狀態)會儲存在單一個store(儲存)之中的一個物件樹狀結構裡。
 
 Redux中只有單一個物件大樹結構來的儲存狀態，稱之為`store`，但它並不是只有單純的儲存資料而已。`store`就是應用程式領域的`state`(狀態)，這名稱是由Flux來的，Flux架構原本是多個store的結構，Redux簡化它為單一個。
@@ -264,9 +262,9 @@ Redux中只有單一個物件大樹結構來的儲存狀態，稱之為`store`�
 
 > 唯一能更動狀態的是發送(emit)一個`action`(動作)，`action`是一個描述發生了什麼事的物件。
 
-這與原先的React中的state與setState的概念有點像，Redux的意思是你不能直接更動store裡面記錄的狀態值，只能"間接"地透過發送`action`物件來叫`store`更動狀態。
+這與原先的React中的`state`與`setState`的概念有點像，Redux的意思是你不能直接更動`store`裡面記錄的狀態值，只能"間接"地透過發送`action`物件來叫`store`更動狀態。
 
-發送(emit)一個action，用的是store.dispatch方法，下面這個範例就是一個要更動狀態的程式碼:
+發送(emit)一個action，用的是`store.dispatch(action)`語法，下面這個範例就是一個要更動狀態的程式碼:
 
 ```js
 store.dispatch({
@@ -275,7 +273,7 @@ store.dispatch({
 })
 ```
 
-中間的那個物件，就叫作action(動作)，它是一個單純用於描述發生了什麼事的物件:
+中間的那個物件，就叫作`action`(動作)，它是一個單純用於描述發生了什麼事的物件:
 
 ```js
 {
@@ -288,7 +286,7 @@ store.dispatch({
 
 也就是說假設Redux的設計中`store`是會對應到React中的`state`設計的話，它們之間有一些聯結，因為React中的`state`值不能直接更動，所以Redux中的`store`也不能直接更動。
 
-`store`實際上是一種`state`擴充的結構，原先的state只能記錄單純的物件資料結構，`store`不止如此，它已經接近MVC的Model(模型)的設計。在Flux的架構，[我的部落格](http://eddychang.me/blog/javascript/94-flux-concept.html)裡有以下的對store的說明:
+`store`實際上是一種`state`擴充的結構，原先的`state`只能記錄單純的物件資料結構，`store`不止如此，它已經接近MVC的Model(模型)的設計。對於Flux的架構解說，在[我的部落格](http://eddychang.me/blog/javascript/94-flux-concept.html)裡有以下的對`store`的說明:
 
 ---
 store(儲存)的角色並非只是元件中的state(狀態)而已，它也不會只有單純的記錄資料，可能在現今的每種不同的Flux延伸的函式庫，對於store的定義與設計都有所不同。在Flux的架構中的store中，它包含了對資料更動的函式，Flux稱這些函式為Store Queries(儲存查詢)，也把它的角色定位為類似傳統MVC的Model(模型)，但與傳統的Model(模型)明顯不同的是，store只能透過Action(動作)以"間接"的方式來自我更新(self-updates through Actions)。
