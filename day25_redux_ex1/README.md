@@ -157,7 +157,7 @@ const store = createStore(addItem,
               window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 ```
 
-第四步，是寫一個render(渲染函式)，這個函式是在如果網頁上有新的變化時，要作輸出呈現的動作。說穿了，這大概是仿照React應用的機制的作法，不過它這設計實際上與React差了十萬八千里，這個渲染函式裡最重要的是用`store.getState()`方法取出目前`store`裡面的狀態值，因為我們現在只有記一個state值，所以直接取出來就是剛剛在reducer裡記錄狀態值的那個陣列。剩下的就是一些格式的調整與輸出工作而已。程式碼如下:
+第四步，是寫一個render(渲染函式)，這個函式是在如果狀態上有新的變化時，要作輸出呈現的動作。說穿了，這大概是仿照React應用的機制的作法，不過它這設計實際上與React差了十萬八千里，這個渲染函式裡最重要的是用`store.getState()`方法取出目前`store`裡面的狀態值，因為我們現在只有記一個state值，所以直接取出來就是剛剛在reducer裡記錄狀態值的那個陣列。剩下的就是一些格式的調整與輸出工作而已。程式碼如下:
 
 ```js
 // @Render
