@@ -6,7 +6,7 @@
 
 這個程式最後的呈現結果，就像下面的動態圖片這樣，重點是在於下面有個Redux DevTools，它有時光旅行除錯的功能，可以倒帶重播你作過的任何資料上的變動:
 
-![Redux範例一展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day26_redux_ex2/asset/day25_demo.gif)
+![Redux範例一展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day26_redux_ex2/asset/day26_demo.gif)
 
 > 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day26_redux_ex2/)，所有的程式碼也在裡面。
 
