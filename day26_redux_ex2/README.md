@@ -64,6 +64,8 @@ import ReactDOM from 'react-dom'
 
 刪除項目的語法是使用`filter`方法，你也可以使用純粹函式的delete項目的寫法，就像之前的TodoApp裡的例子一樣的寫法也行。回傳一個不包含傳入id值項目的陣列，相當於刪除這個id值的項目就是。程式碼如下:
 
+> 註: 因為項目的id值我們要用`+new Date()`來產生，這不能使用在reducer裡，所以在元件裡加入的方法中產生然後傳入reducer。
+
 ```js
 // @Reducer
 //
