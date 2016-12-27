@@ -4,7 +4,7 @@
 http://jaysoo.ca/2016/02/28/organizing-redux-application/
 
 
-## Redux中的副作用議題
+## Redux中的副作用處理議題
 
 長期以來在程式語言中，就以兩大分類來區分程式開發的風格，它們分別是以下這兩種:
 

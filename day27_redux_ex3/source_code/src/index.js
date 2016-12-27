@@ -11,7 +11,7 @@ import MyComponent from './app'
 //
 // store = createStore(reducer)
 // 使用redux dev tools
-// 如果要正常使用是使用 const store = createStore(dealItem)
+// 如果要正常使用是使用 const store = createStore(itemApp)
 const store = createStore(itemApp,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
