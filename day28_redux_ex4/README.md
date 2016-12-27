@@ -1,8 +1,10 @@
-# Redux篇: 處理副作用
+# Redux篇: 使用react-thunk處理副作用
 
 
 http://jaysoo.ca/2016/02/28/organizing-redux-application/
 
+
+Uncaught Error: Actions must be plain objects. Use custom middleware for async actions.
 
 ## Redux中的副作用處理議題
 
