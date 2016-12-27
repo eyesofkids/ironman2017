@@ -404,4 +404,4 @@ export function addTodo(text) {
 
 如果一個Action物件簡單到連payload(有效資料)都沒有，通常會是個固定payload(有效資料)的動作，例如每動作一次+1或-1，或是每動作一次在true或false值切換，那麼在Redux中允許連Action或Action Creator都可以不用寫了。但是這種情況大概只有在很小的應用，或是學習階段的範例才會這樣，如果應用還是有一定程度的複雜度，一定都是要寫出來的。
 
-> 註: Action Creator在Redux中也是要求是個純粹函式。
+> 註: Action Creator在Redux中並沒有要求一定要是個純粹函式，只是不建議在裡面直接執行有副作用的函式，之後的章節會有說明。請參考這篇在stackoverflow的[Reduce作者的回答](http://stackoverflow.com/questions/34570758/why-do-we-need-middleware-for-async-flow-in-redux/34623840#34623840)。
