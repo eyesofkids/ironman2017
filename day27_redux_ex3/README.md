@@ -6,8 +6,6 @@
 
 這個程式最後的呈現結果，實際上與昨天是相同的(下面是上一章的展示圖片)，雖然表面上看起來差不多，但內部的作法是完全不同。
 
-![Redux範例一展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day26_redux_ex2/asset/day26_demo.gif)
-
 > 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day27_redux_ex3/)，所有的程式碼也在裡面。
 
 ## 程式碼說明
