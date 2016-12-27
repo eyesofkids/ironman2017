@@ -2,9 +2,9 @@
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day27_redux_ex3/asset/intro.png)
 
-今天的主題是Redux使用於React元件之中，這個範例並不是一個真正用於React元件的範例，正確的來說，它只是個為了展示Redux原本的功能，如何整合到像React這樣的函式庫，最初步的一種測試範例，我們要學習的是前一個範例到這個範例的整個整合過程。
+今天的主題是Redux使用於React元件之中，並使用由Redux官方出品的專案綁定套件[react-redux](https://github.com/reactjs/react-redux)。
 
-這個程式最後的呈現結果，實際上與昨天是相同的(下面是上一章的展示圖片)，雖然表面上看起來差不多，但內部的作法是完成不同。
+這個程式最後的呈現結果，實際上與昨天是相同的(下面是上一章的展示圖片)，雖然表面上看起來差不多，但內部的作法是完全不同。
 
 ![Redux範例一展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day26_redux_ex2/asset/day26_demo.gif)
 
