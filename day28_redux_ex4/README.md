@@ -572,4 +572,33 @@ export const onItemAddAsync2 = text => {
 ```
 
 redux-thunk相當方便地自動會進行在Action Creator的函式，不論是異步或同步的函式都可以在這裡面進行處理。
----
+
+### middleware真的是完美的處理Redux中的方式？
+
+這個問題我會寫在這裡，代表我已經問過我自己，也找過答案了。
+
+Redux的許多核心的設計由Elm語言啟發而來，那Elm是如何處理副作用或異步執行的？
+
+答案可能會令你吃驚，以基本的設計來說Elm是在reducer中處理的，啊？reducer不是純粹函式，怎麼能作異步執行或有副作用的執行？
+
+簡單來說，Elm是直接擁抱異步執行動作與副作用。有一個[redux-loop](https://github.com/redux-loop/redux-loop)專案，是從elm-effects(現已內建在Elm中)與Elm架構的移植過來的工具函式庫，用的是把異步執行直接寫在reducer中，主要是它讓reducer也沒處理異步，只是記錄要作的事情然後轉交給別的方法去處理，實際並沒有破壞純粹函式的設計，所以這樣也行就是。
+
+redux-loop並不是middleware，它算是增強或改進Redux的本質結構的一種套件，它有一些取代方法，你要使用它需要改用裡面的`combineReducers`函式，與在建立store時要多傳入install函式。
+
+那麼redux-loop就是最佳的解決方案了嗎？也不盡然，Elm語言自然有它設計上與JavaScript語言的不同之處，也不是那麼容易就能完全發揮其中的這樣的設計。至少現在看起來redux-loop並沒有那麼流行(Github上有900多個星星)，Redux中還有其他的較為流行的類似目的專案。
+
+目前Redux中的相同目的的專案，大概有以下幾個，我把Github的星星數目也列出來，作為一個使用者數量的指標:
+
+- [redux-thunk](https://github.com/gaearon/redux-thunk): Redux作者開發，上面有簡單說明了，有3800星星
+- [redux-promise](https://github.com/acdlite/redux-promise): 開發者也是React官方成員之一，1200星星，很久沒更新了
+- [redux-promise-middleware](https://github.com/pburtchaell/redux-promise-middleware): 開發者也是FB工程師之一，600星星
+- [redux-observable](https://github.com/redux-observable/redux-observable): 這是由RxJS 5為基礎的middleware，開發者是Netflix工程師，也是RxJS專案的開發者之一。1800個星星。
+- [redux-saga](https://github.com/redux-saga/redux-saga): 這是由ES6的Generators特性發展出來的一個middleware，目前星星最多，有5600個星星。
+
+redux-saga應該是目前最流行的專案，有自己一套完整架構的middleware，文件也有翻成[繁體中文在這裡](https://github.com/neighborhood999/redux-saga)與[簡體中文在這裡](https://github.com/superRaytin/redux-saga-in-chinese)。但因為要使用它需要先對ES6的Generators特性有一定的理解，才能夠靈活的運用它，算是另一個學習的門檻。
+
+以上這些就是目前大概能找得到的middleware與移植Elm的redux-loop的幾個解決方案，其中最流行的是redux-saga，它是一個具有高度可測試性的middleware解決方案，這也是它會受到歡迎的其中一大原因。在stackoverflow上的[這篇回答](http://stackoverflow.com/questions/34930735/pros-cons-of-using-redux-saga-with-es6-generators-vs-redux-thunk-with-es7-async/34933395)，與[這篇的回答](http://stackoverflow.com/questions/34930735/pros-cons-of-using-redux-saga-with-es6-generators-vs-redux-thunk-with-es7-async/34933395)中，可以理解它與redux-thunk設計的不同之處。
+
+Redux作者在今年的5月時，發了一個議題在Github上: [Reducer Composition with Effects in JavaScript](https://github.com/reactjs/redux/issues/1528)
+
+這篇文章就是一個公開討論目前的使用middleware來處理副作用，仍然有一些不夠完美的情況。當然我們都不是很深入應用這些框架的開發者，只能從這些討論中理解要如何進行未來的改進。不過這算是一個進階的議題，或許2017年會有新的改進作法也說不定。
