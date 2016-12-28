@@ -405,7 +405,7 @@ export default Enhance(MyComponent); // Enhanced component
 
 > 註: HOC樣式是一個很新的語法樣式，它也不是完全沒有問題，例如React的靜態方法(static methods)會在HOC元件中消失，這是一個進階的議題，請參考[這裡的討論](https://github.com/acdlite/flummox/issues/173)。目前react-redux用的解決方式是用[hoist-non-react-statics](https://github.com/mridgway/hoist-non-react-statics)。
 
-### connect方法與connectAdvanced方法
+#### connect方法與connectAdvanced方法
 
 `connect`方法用了HOC(高階元件)的樣式，那麼從上面看到HOC必定有一個樣版元件 - 也就是要把作為傳入參數的元件，增強成什麼樣子的那個元件。
 
