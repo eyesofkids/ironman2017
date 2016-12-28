@@ -491,3 +491,27 @@ add(1)(2)(3)
 第一個傳入值x會變為閉包中的變數被記憶，然後是第二個傳入值y，最後的加總是由閉包結構中的x與y與傳入參數z一起加總。這個範例中用了三個傳入參數，如果你沒辦法一下子看清楚，可以用二個傳入參數的情況來練習看看。
 
 ---
+
+### Action Creators(動作建立器)的綁定
+
+在我們的範例中是使用Action Creators(動作建立器)來作為綁定於React元件的props屬性上的Dispatch(發送)方式。也就是在範例中的`actionCreators`實際上它是作為`connect`第二個傳入參數值，也就是`mapDispatchToProps`這個參數來傳入。
+
+這個`mapDispatchToProps`是一個很彈性的傳入參數，在react-redux中的設計共有三種情況，這是在API手冊上可能會說得不清楚的地方，我把它列出來:
+
+- whenMapDispatchToPropsIsFunction: 當這個傳入參數是個函式時，會把這個函式映對到props上。這個函式因為可以得到dispatch，所以用這個方式相當於要自訂dispatch的處理函式，一般會用於只需要部份對映Action Creators(動作建立器)使用。
+- whenMapDispatchToPropsIsMissing: 當這個傳入參數沒有指定時，這會直接把dispatch映對到props上。相當於傳入`(dispatch)=>({dispatch})`函式。
+- whenMapDispatchToPropsIsObject: 當這個傳入參數是個物件時，它會用一個Redux的[bindActionCreators](http://redux.js.org/docs/api/bindActionCreators.html)方法，這個方法就是要綁定Action Creators(動作建立器)用的。也就是說，這個情況才是我們直接傳入Action Creators(動作建立器)所使用的。
+
+因為設計是如此，`mapDispatchToProps`本身的使用情況有很多種，在API文件中也列了很多不同的使用情況，但最終還是要以上面這三種情況為準。例如使用的幾個情況:
+
+1. 沒給這個傳入參數，也就是connect方法只有一個傳入參數`mapStateToProps`，這時候dispatch會自動映對到props上，你要作`store.dispatch(action)`，相當於用`this.props.dispatch(action)`
+2. 給actionCreators，如同我們的例子一樣，Action Creators(動作建立器)映對到props上。
+3. 自訂出`mapDispatchToProps`函式，再傳入函式，通常是只需要部份的Action Creators(動作建立器)而已，例如下面的例子是在這個元件中只需要`onItemAdd`，這仍然會使用Redux的[bindActionCreators](http://redux.js.org/docs/api/bindActionCreators.html)方法來作，所以你在這個元件的最上面要匯入redux套件:
+
+```js
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ onItemAdd }, dispatch)
+}
+```
+
+`mapDispatchToProps`的使用情況就是這樣，這個傳入參數是一個初學者非常搞混的地方。
