@@ -1,4 +1,4 @@
-# Redux篇: 使用middleware處理異步動作
+# Redux篇: 使用middleware(中介軟體)處理異步動作
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day28_redux_ex4/asset/intro.png)
 
