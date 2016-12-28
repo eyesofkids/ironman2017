@@ -1,4 +1,4 @@
-# Redux篇: 使用middleware處理副作用
+# Redux篇: 使用middleware處理副作用(異步動作)
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day28_redux_ex4/asset/intro.png)
 
