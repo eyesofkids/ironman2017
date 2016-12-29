@@ -99,7 +99,7 @@ class App extends Component {
     const { id, title, isCompleted } = aItem
     const payload = { id, title, isCompleted }
 
-    //作POST
+    //作PUT
     fetch(`http://localhost:5555/items/${id}`, {
       method: 'PUT',
       headers: {

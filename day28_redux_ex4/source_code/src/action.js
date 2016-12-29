@@ -10,7 +10,7 @@ export const onItemAdd = (text: string) => (
   }
 )
 
-// onItemAdd處理產生'ADD_ITEM'的動作物件，注意傳入參數是id
+// onItemDel處理產生'DEL_ITEM'的動作物件，注意傳入參數是id
 export const onItemDel = (id: number) => ({ type: DEL_ITEM, id })
 
 // onInitData是初始化用的，這是準備要讓reducer重新載入store裡面的items值
