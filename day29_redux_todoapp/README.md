@@ -2,11 +2,7 @@
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day29_redux_todoapp/asset/intro.png)
 
-今天的主題是在Redux中的最後一篇，我們將把之前React篇最後完成的TodoApp，改用Redux來管理應用程式領域的狀態，也加上了路由器的功能。
-
-這個程式最後的呈現結果，就像下面的動態圖片這樣:
-
-![Redux範例一展示](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day29_redux_todoapp/day29_demo.gif)
+今天的主題是在Redux中的最後一篇，我們將把之前React篇最後完成的TodoApp，改用Redux來管理應用程式領域的狀態。
 
 > 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day29_redux_todoapp/)，所有的程式碼也在裡面。
 
@@ -592,7 +588,7 @@ TodoEditForm就不說了，它裡面只有使用`onFecthUpdateItem`這個方法�
 
 先講作法上的，這個新的範例的作法與之前的TodoApp的設計思路不同，它並沒有像之前用元件檔案中的模組作用域的一些變數來記錄現在是否搜尋中，或是先記錄當下的狀態值之類的，當時的作法只是展示一些不同的想法，實作出的簡單範例而已，當然有可能並不是最好的方式。
 
-在搜尋、過濾與排序功能上，這個新的範例展示的是我認為較好的作法，它用的是在Redux中另外記錄應用程式搜尋關鍵字、排序方向的狀態值等等，用這些狀態值的改變，來促使React應用觸發重新渲染的行為，以此來改變呈現的樣子，這三個功能最後都只在App元件的render方法中處理，排序與搜尋是作在一起的，過濾則是在每個項目一個個輸出時處理，你可以看到在App元件的redner方法，像下面的程式碼:
+在搜尋、過濾與排序功能上，這個新的範例展示的是我認為較好的作法，它用的是在Redux中另外記錄應用程式搜尋關鍵字、排序方向的狀態值等等，用這些狀態值的改變，來促使React應用觸發重新渲染的行為，以此來改變呈現的樣子，這三個功能最後都只在App元件的render方法中處理，排序與搜尋是作在一起的，過濾則是在每個項目一個個輸出時處理，你可以看到在App元件的render方法，像下面的程式碼:
 
 ```js
 // 這裡作搜尋(Search)功能
