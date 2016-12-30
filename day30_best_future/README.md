@@ -2,7 +2,9 @@
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day30_best_future/asset/intro.png)
 
-> "你知道得愈多，你會愈知道你不知道的還有更多" ~ 亞里斯多得(Aristotle)
+"The more you know, the more you know you don’t know." ~ Aristotle
+
+"你知道得愈多，你會愈知道你不知道的還有更多" ~ 亞里斯多德
 
 > 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day30_best_future/)。
 
