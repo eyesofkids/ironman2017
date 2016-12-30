@@ -2,9 +2,9 @@
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day30_best_future/asset/intro.png)
 
-"The more you know, the more you know you don’t know." ~ Aristotle
+"The more you know, the more you know you don’t know." - Aristotle
 
-"你知道得愈多，你會愈知道你不知道的還有更多" ~ 亞里斯多德
+"你知道得愈多，你會愈知道你不知道的還有更多" - 亞里斯多德
 
 > 註: 本文章同步放置於[Github庫的這裡](https://github.com/eyesofkids/ironman2017/tree/master/day30_best_future/)。
 
@@ -67,7 +67,7 @@
 
 以年齡來看，已投入就業市場的相對年輕的開發者，對於ReactJS等新式的函式庫框架，較有嘗試與學習的意願，應該佔了有近一半的開發人口群。第二個區段是在學的大專院校學生，因為本身就是重度使用社群媒體與使用網路尋找資訊，對於新事物接受度對比較高。
 
-此份調查並沒有辦法分析出開發人口的技術背景、對框架/函式庫的使用情況，在這份![JavaScript前端框架大調查](http://mapler-learn.blogspot.tw/2016/11/javascript.html)
+此份調查並沒有辦法分析出開發人口的技術背景、對框架/函式庫的使用情況，在這份[JavaScript前端框架大調查](http://mapler-learn.blogspot.tw/2016/11/javascript.html)
 中，有針對每個函式庫作喜好與使用情況調查，但統計數據只有262人，只能作為參考之用。
 
 ### 綜合分析結論
