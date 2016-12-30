@@ -40,14 +40,6 @@
 | 社團 | Angular User Group Taiwan | 5856 | 問答與貼文數多 |   |
 | 社團 | AngularJS.101 新手村 | 1417 | 全是轉貼文 |   |
 
-## 群體分析結果
-
-以目前最多人數的"Front-End Developers Taiwan"與"JavaScript.tw"，由於成立時間都較早(~2014)，所以扣除掉重覆與參與人員流動，因為並非所有的前端或JavaScript開發者都會加入Facebook社群，甚至不一定會使用Facebook，作為加減之後的概略數目。整體的前端或JavaScript技術的開發人口的群體為15000人左右。
-
-其他的各函式庫/框架分析，由於"Angular User Group Taiwan"的成立時間也比較早(2013)，在React之前就有Angular版本1相當熱門的時期，其他的Vue.js與React相關社群大約都是2016年才成立，這些社群的使用人口會流動得更快，所以綜合分析過，應該每個函式庫/框架的群體都是差不多，大約是群體2000人左右。
-
-以上的社群的活躍人數比例並不一定，可能在20~30%左右而已，成立較久人數較多的社群有可能在10%甚至更低。
-
 ## 社群面向分析
 
 社群面向分析目前只能由"Reactjs新聞"來看，這是因為能獲取到較為正確的由Facebook所提供的統計資料。
@@ -155,7 +147,7 @@
 - Vue.js: 3
 
 ```
-<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/863_RC25/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"vue.js","geo":"TW","time":"today 12-m"},{"keyword":"react","geo":"TW","time":"today 12-m"},{"keyword":"angular","geo":"TW","time":"today 12-m"},{"keyword":"react native","geo":"TW","time":"today 12-m"}],"category":13,"property":""}, {"exploreQuery":"cat=13&date=today%2012-m&geo=TW&q=vue.js,react,angular,react%20native","guestPath":"https://www.google.com.tw:443/trends/embed/"}); </script> 
+<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/863_RC25/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"vue.js","geo":"TW","time":"today 12-m"},{"keyword":"react","geo":"TW","time":"today 12-m"},{"keyword":"angular","geo":"TW","time":"today 12-m"},{"keyword":"react native","geo":"TW","time":"today 12-m"}],"category":13,"property":""}, {"exploreQuery":"cat=13&date=today%2012-m&geo=TW&q=vue.js,react,angular,react%20native","guestPath":"https://www.google.com.tw:443/trends/embed/"}); </script>
 ```
 
 > 統計方法: 使用Google趨勢功能。
