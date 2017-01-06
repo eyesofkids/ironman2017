@@ -20,7 +20,7 @@
 並開始從事推廣React技術的社群經營，建置了以下的社群:
 
 - [ReactJS台灣討論區](https://reactjs-tw.org/): 沒人在討論的討論區，主要收集相關新聞之用
-- [ReactJS新聞](https://www.facebook.com/reactjs.tw/): 約有2600人按讚，經常轉貼新聞之用
+- [ReactJS新聞](https://www.facebook.com/reactjs.tw/): 約有2300人按讚，經常轉貼新聞之用
 - [ReactJS新聞電子報](https://reactjs-tw.top/): 約有500人訂閱
 
 我也在最近參與了在大陸的[segmentfault](https://segmentfault.com/u/eyesofkids)技術討論區的問答，主要是回答一些我能回答的問題，當然因為參加了鐵人賽，最近一個月就很少有回答的情況。segmentfault的參與是個不錯的經驗，學習了這麼多的知識後，在實作的經驗上仍然有不足之處，從實際的問答中可以進一步地學習到更多解題實作技巧或是去研究額外的知識，也可以與其他的開發者互相交流。當然，中國大陸的同領域開發者很多，與台灣相比是數十倍以上，認同你的意見時很坦率，但批評時更是不留情面，這也另一種意外得到的經驗。
