@@ -337,7 +337,7 @@ function Mailbox(props) {
 
 第一種是就是某個真實的值，或是簡單的運算(例如數字的加減乘除)會求出值的表達式，物件類型的值很常用在定義內聯的CSS樣式(inline CSS styles)時使用，在解析後會自動套用到DOM元素的`style`屬性中，例如:
 
-```js
+```
 value={123 + 456}
 
 value={true}
@@ -350,11 +350,11 @@ value={true}
 }}>{"text"}</span>
 ```
 
-> 註: 有時候會看到雙花括號`{{}}`是因為在JSX中代入的值是一個物件值，不過在其他函式庫例如Angular這種符號有其他意義。
+> 註: 有時候會看到雙層花括號是因為在JSX中代入的值是一個物件值，不過在其他函式庫例如Angular這種符號有其他意義。
 
 第二種是某個變數(或常數)，代表要從這個變數(或常數)得出值(注意函式或方法也是一種值)，例如:
 
-```js
+```
 value={this.state.value}
 
 defaultValue={this.props.initText}
