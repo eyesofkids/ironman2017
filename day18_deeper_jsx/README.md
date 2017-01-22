@@ -344,13 +344,13 @@ value={true}
 
 <Hello name={{ firstname: 'John', lastname: 'Doe' }} />
 
-<span key={index} style = {{
+<span key={index} style={{
     color: 'red',
     paddingRight: '10px'
 }}>{"text"}</span>
 ```
 
-> 註: 有時候會看到雙花括號(`{{}}`)是因為在JSX中代入的值是一個物件值，不過在其他函式庫例如Angular這種符號有其他意義。
+> 註: 有時候會看到雙花括號`{{}}`是因為在JSX中代入的值是一個物件值，不過在其他函式庫例如Angular這種符號有其他意義。
 
 第二種是某個變數(或常數)，代表要從這個變數(或常數)得出值(注意函式或方法也是一種值)，例如:
 
