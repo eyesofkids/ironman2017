@@ -1,67 +1,39 @@
-# ironman2017
+# 關於本書
 
-IT邦幫忙 2017鐵人賽
+這是一本有關React技術的中文入門書籍，主要的內容來源是來自作者參加台灣的[IT邦幫忙2017鐵人賽](http://ithelp.ithome.com.tw/users/20103131/ironman/1012)，三十天發文的內容整理而成，書名與參賽的主題一樣。
 
-主題: React - DOM界的彼方
+本電子書的內容，會與參賽時三十篇文章會有部份內容的有所差異，主要是在內容的增加部份。電子書會涵蓋所有比賽中的貼文，並針對其中有講解不足的部份再新增章節說明。
 
-![30天的主題大綱](https://github.com/eyesofkids/ironman2017/blob/master/day01_intro/asset/toc.png?raw=true)
+本書的主要內容會包含以下幾部份:
 
-## 30天主題
+- 工具篇: 介紹使用Node.js開發執行環境，使用的開發工具是微軟出品的Visual Studio Code，以及Babel、ESLint與Flow檢查工具。
+- ES6(ES2015)篇: 介紹常用的幾個ES6標準中的新特性，大部份都會使用在React的開發上。
+- React篇: 搭配簡單的幾個實作範例，學習React的使用方式。
+- Redux篇: 從簡單的實作範例開始，到結合React使用。
 
-## 前言 (1 day)
+## 簡中與繁中語言
 
-1. 介紹文
+本書同時進行簡體中文與繁體中文(台灣地區)的撰寫，你可以視需求觀看較為方便閱讀的語言。簡體中文的連結在此，繁體中文的連結在此。
 
-## 工具篇 (3 days)
+## 軟體與範例的版本
 
-1. Visual Studio Code/ Node.js/ webpack-es6-startkit
-2. ESlint
-3. Flow
+本書的主要內容撰寫於2016年12月，使用的軟體與範例都是這個時間點的最新版本，其中的內容至少於半年中都會進行更動。
 
-## ES6篇 (9 days)
+軟體與範例的改版，將會於本書完成後一年中視情況作整體更動。
 
-1. let /const
-2. Arrow Function
-3. default params
-4. rest params & spread operator
-5. De-structuring Assignment
-6. Class
-7. module system
-8. pure function & side effect
-9. object enhancement
+## 本書的閱讀對象
 
-> 上面章節已結束，共13篇
+如果你對React技術有興趣，你可以參考這本書，本書的閱讀預設對象，是具備有一些JavaScript語言的基礎的開發者。但最前面是一部份是介紹會使用到的ES6新特性，你也可以把它當成是入門的知識基礎篇。
 
----
+## 本書不包含什麼
 
-## ReactJS篇 (11 days !! only)
+- jQuery的語法
+- Node.js的API或設計
+- 屬於各別瀏覽器的自有或非標準設計
+- 低於ES5支援的瀏覽器相容內容(IE8以下)
 
-1. create-react-app / HelloWorld
-2. HelloWorld explain
-3. textinput(state)
-4. textinput+(child -> owner)
-5. textinput+Style
-6. textinput+edit field
-7. search/filter
-8. sort
-9. deeper JSX
-10. ajax/fetch / lifecycle
-11. refs
-12. props.children / cloneElement
-13. react-router
+## 授權規定
 
-> 上面章節已結束，共11篇
+本電子書的使用的授權規定如下，如果有其他問題請再連絡作者:
 
----
-
-## Redux篇 (5 days)
-
-1. ex1 - easy (textinput)
-2. ex2 - ex1+ (textinput+delete)
-3. ex3 - react w/o connect
-4. ex4 - react w connect + refactor
-5. ex6 - thunk async(side effect)
-
-## 後記 (1 day)
-
-1. 參加心得&感想
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本著作係採用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">創用 CC 姓名標示-非商業性-相同方式分享 4.0 國際 授權條款</a>授權.
