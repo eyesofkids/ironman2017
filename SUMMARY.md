@@ -31,7 +31,7 @@
    * [TodoApp程式+編輯項目](day21_todoapp_edit/README.md)
    * [TodoApp程式+搜尋/過濾+排序](day22_search_sort/README.md)
    * [TodoApp程式+Fetch/Ajax於生命週期方法](day23_lifecycle/README.md)
-   * [路由器(router)與本篇小結](day24_react_router)
+   * [路由器(router)與本篇小結](day24_react_router/README.md)
 * Redux篇
    * [介紹與第一個範例](day25_redux_ex1/README.md)
    * [第一次使用Redux於React應用](day26_redux_ex2/README.md)
