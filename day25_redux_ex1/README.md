@@ -288,9 +288,7 @@ store.dispatch({
 
 `store`實際上是一種`state`擴充的結構，原先的`state`只能記錄單純的物件資料結構，`store`不止如此，它已經接近MVC的Model(模型)的設計。對於Flux的架構解說，在[我的部落格](http://eddychang.me/blog/javascript/94-flux-concept.html)裡有以下的對`store`的說明:
 
----
-store(儲存)的角色並非只是元件中的state(狀態)而已，它也不會只有單純的記錄資料，可能在現今的每種不同的Flux延伸的函式庫，對於store的定義與設計都有所不同。在Flux的架構中的store中，它包含了對資料更動的函式，Flux稱這些函式為Store Queries(儲存查詢)，也把它的角色定位為類似傳統MVC的Model(模型)，但與傳統的Model(模型)明顯不同的是，store只能透過Action(動作)以"間接"的方式來自我更新(self-updates through Actions)。
----
+> store(儲存)的角色並非只是元件中的state(狀態)而已，它也不會只有單純的記錄資料，可能在現今的每種不同的Flux延伸的函式庫，對於store的定義與設計都有所不同。在Flux的架構中的store中，它包含了對資料更動的函式，Flux稱這些函式為Store Queries(儲存查詢)，也把它的角色定位為類似傳統MVC的Model(模型)，但與傳統的Model(模型)明顯不同的是，store只能透過Action(動作)以"間接"的方式來自我更新(self-updates through Actions)。
 
 #### 更動只能由純粹函式來進行(Changes are made with pure functions)
 
