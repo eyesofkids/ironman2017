@@ -1,0 +1,16 @@
+{
+    "plugins": [
+        "anchorjs", "disqus", "thumbnail", "ga"
+    ],
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        },
+        "disqus": {
+            "shortName": "js-start-book"
+        },
+        "ga": {
+            "token": "UA-273248-19"
+        }
+    }
+}
