@@ -1,4 +1,4 @@
-# React篇: Day 23: React篇 - TodoApp程式 + Fetch/Ajax 於生命週期方法
+# React篇 - TodoApp程式 + Fetch/Ajax 於生命週期方法
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day23_lifecycle/asset/intro.png)
 

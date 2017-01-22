@@ -1,4 +1,4 @@
-# React篤: JSX語法撰寫指引
+# React篇: JSX語法撰寫指引
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day18_deeper_jsx/asset/intro.png)
 

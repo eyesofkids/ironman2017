@@ -1,4 +1,4 @@
-# Redux篇: Redux篇: TodoApp改用Redux整合
+# Redux篇: TodoApp改用Redux整合
 
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day29_redux_todoapp/asset/intro.png)
 
