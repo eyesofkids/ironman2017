@@ -1,4 +1,4 @@
-# 鐵人賽第 3 天: ESLint - Lint工具的後起之秀
+# ESLint - Lint工具的後起之秀
 
 ![ESLint](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day03_eslint/asset/intro.png)
 
