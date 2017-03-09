@@ -131,57 +131,6 @@ class HelloWorld extends React.Component {
 
 > 註: 以上關於ASI(Automatic Semicolon Insertion, 自動插入分號)的機制，可以參考這篇我寫的[部落格文章](http://eddychang.me/blog/javascript/97-js-semicolon.html)。
 
-最後，談到箭頭函式用到一種語法簡化的"**極致**"境界時，你會看到之前很少見的簡短語法，例如這一個之前在[討論區被問到的問題](https://segmentfault.com/q/1010000007320321/a-1020000007321437)，其中的內容是有關於Redux函式庫中的原始碼 - [compose.js](https://github.com/reactjs/redux/blob/89b0c254ad806c9707fe8f2d3cd78b191b30d2c6/src/compose.js)這個檔案，原始碼像下面這樣，因為沒有很長我整個列出來:
-
-```js
-export default function compose(...funcs) {
-  if (funcs.length === 0) {
-    return arg => arg
-  }
-
-  funcs = funcs.filter(func => typeof func === 'function')
-
-  if (funcs.length === 1) {
-    return funcs[0]
-  }
-
-  const last = funcs[funcs.length - 1]
-  const rest = funcs.slice(0, -1)
-  return (...args) => rest.reduceRight((composed, f) => f(composed), last(...args))
-}
-```
-
-最後面一行用了兩個箭頭函式，一個是在`reduceRight`方法之中作為傳入參數，摘要出來是長下面這樣:
-
-```js
-(composed, f) => f(composed), last(...args)
-```
-
-這用了一種少看到的[逗號運算符](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator)(,)，這個運算符的作用是可以組合多個表達式，變成單一個表達式，運算求值的順序是從左至右，這可以用兩個以上的表達式。一般在使用這個運算符會用圓括號框住外面，但這只是方便閱讀而已並非必要。
-
-也就是說上面的`f(composed), last(...args)`，實際上是相當於先執行`f(composed)`，然後執行`last(...args)`，最後的箭頭函式的回傳是後面這個表達式的求值結果。
-
-逗號運算符在簡單的`if...else`語句會看到有人(或是編譯工具)用來作簡寫語法，例如下面的例子:
-
-```js
-function f(){
-  if(x){
-   foo()
-   return bar()
-  }else{
-   return 1
-  }
-}
-```
-
-會簡寫為下面的樣子(這是經過[Closure Compiler](https://closure-compiler.appspot.com/home)編譯後的結果):
-
-```js
-function f(){return x?(foo(),bar()):1}
-```
-
-你其實一定會看過逗號運算符，只是不知道它原來可以這樣用而已，最常見的就是在for語句中的那三個表達式的圓括號中。在其他情況下，這個並不算會常見到的一種語法，但就如上面說的，因為箭頭函式如果要有自動回傳的作用，肥箭頭的後面必定只能用單一個表達式，所以你有可能會看到有人用了逗號運算符，在某些為了讓程式碼寫得更簡潔的情況下，相信以後會愈來愈多人這樣用吧。
-
 ## `this`值的綁定
 
 箭頭函式可以取代某些原有使用`self = this`或`.bind(this)`的情況，它可以在詞法上綁定`this`變數。但要視情況而定，而不是每種情況都一定可以用箭頭函式來取代。下面來簡單說明一下。
