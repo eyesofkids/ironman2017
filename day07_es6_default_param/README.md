@@ -1,5 +1,5 @@
 ## ES6篇 - Default Parameters(傳入參數預設值)
-
+# https://github.com/therealcurlsport/JARVIS-on-Messenger
 ![intro](https://raw.githubusercontent.com/eyesofkids/ironman2017/master/day07_es6_default_param/asset/intro2.png)
 
 本章的目標是提供ES6中在函式中的傳入參數預設值的一些介紹。傳入參數預設值是在眾多ES6新特性中的其中一個，它改善了長期以來在JavaScript中都要使用技巧性的作法來設定函式傳入參數的預設值的語法。
